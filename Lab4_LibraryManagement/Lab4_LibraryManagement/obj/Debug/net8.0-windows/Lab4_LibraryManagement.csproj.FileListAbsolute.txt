@@ -1,0 +1,17 @@
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\bin\Debug\net8.0-windows\Lab4_LibraryManagement.exe
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\bin\Debug\net8.0-windows\Lab4_LibraryManagement.deps.json
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\bin\Debug\net8.0-windows\Lab4_LibraryManagement.runtimeconfig.json
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\bin\Debug\net8.0-windows\Lab4_LibraryManagement.dll
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\bin\Debug\net8.0-windows\Lab4_LibraryManagement.pdb
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.Form1.resources
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.csproj.GenerateResource.cache
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.AssemblyInfoInputs.cache
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.AssemblyInfo.cs
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.csproj.CoreCompileInputs.cache
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.sourcelink.json
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.dll
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\refint\Lab4_LibraryManagement.dll
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.pdb
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\Lab4_LibraryManagement.genruntimeconfig.cache
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4_LibraryManagement\Lab4_LibraryManagement\obj\Debug\net8.0-windows\ref\Lab4_LibraryManagement.dll
