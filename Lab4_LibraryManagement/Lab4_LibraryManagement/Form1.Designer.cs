@@ -46,6 +46,7 @@
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
+            label8 = new Label();
             btn_XoaSV = new Button();
             btn_SuaSV = new Button();
             btn_ThemSV = new Button();
@@ -60,6 +61,7 @@
             label14 = new Label();
             dgv_Sach = new DataGridView();
             dgv_SV = new DataGridView();
+            comboBox1 = new ComboBox();
             panel_book.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Sach).BeginInit();
@@ -226,6 +228,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(label8);
             panel1.Controls.Add(btn_XoaSV);
             panel1.Controls.Add(btn_SuaSV);
             panel1.Controls.Add(btn_ThemSV);
@@ -243,6 +247,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(554, 486);
             panel1.TabIndex = 1;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(58, 294);
+            label8.Name = "label8";
+            label8.Size = new Size(95, 31);
+            label8.TabIndex = 11;
+            label8.Text = "MaSach";
             // 
             // btn_XoaSV
             // 
@@ -298,6 +311,7 @@
             txb_MSSV.Name = "txb_MSSV";
             txb_MSSV.Size = new Size(338, 38);
             txb_MSSV.TabIndex = 7;
+            txb_MSSV.TextChanged += txb_MSSV_TextChanged;
             // 
             // label10
             // 
@@ -363,6 +377,15 @@
             dgv_SV.Size = new Size(622, 343);
             dgv_SV.TabIndex = 3;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "123123\t", "1548" });
+            comboBox1.Location = new Point(180, 291);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(338, 39);
+            comboBox1.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
@@ -420,5 +443,7 @@
         private Label label14;
         private DataGridView dgv_Sach;
         private DataGridView dgv_SV;
+        private Label label8;
+        private ComboBox comboBox1;
     }
 }

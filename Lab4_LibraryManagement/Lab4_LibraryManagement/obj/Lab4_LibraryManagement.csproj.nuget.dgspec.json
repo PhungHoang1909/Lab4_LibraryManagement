@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\Năm 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj": {}
+    "C:\\Y3HK2\\Quản trị hệ CSDL\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj": {}
   },
   "projects": {
-    "D:\\Study\\Năm 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj": {
+    "C:\\Y3HK2\\Quản trị hệ CSDL\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\Năm 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj",
+        "projectUniqueName": "C:\\Y3HK2\\Quản trị hệ CSDL\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj",
         "projectName": "Lab4_LibraryManagement",
-        "projectPath": "D:\\Study\\Năm 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj",
-        "packagesPath": "C:\\Users\\reolz\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\Năm 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\obj\\",
+        "projectPath": "C:\\Y3HK2\\Quản trị hệ CSDL\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement.csproj",
+        "packagesPath": "C:\\Users\\Ngoc Hieu\\.nuget\\packages\\",
+        "outputPath": "C:\\Y3HK2\\Quản trị hệ CSDL\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\Lab4_LibraryManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\reolz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ngoc Hieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
