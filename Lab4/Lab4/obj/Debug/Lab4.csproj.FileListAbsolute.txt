@@ -1,0 +1,10 @@
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.exe.config
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.exe
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.pdb
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.AssemblyReference.cache
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.Form1.resources
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.Properties.Resources.resources
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.GenerateResource.cache
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.exe
+D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.pdb
