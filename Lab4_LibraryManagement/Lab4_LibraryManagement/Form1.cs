@@ -6,5 +6,10 @@ namespace Lab4_LibraryManagement
         {
             InitializeComponent();
         }
+
+        private void txb_MSSV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
