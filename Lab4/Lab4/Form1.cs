@@ -23,5 +23,18 @@ namespace Lab4
             this.sINHVIENTableAdapter.Fill(this.lab4_QuanLyThuVienDataSet.SINHVIEN);
 
         }
+
+        private void dgv_SinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_SinhVien.Rows[e.RowIndex];
+
+                txb_MSSV.Text = row.Cells[0].Value.ToString();
+                txb_TenSV.Text = row.Cells[1].Value.ToString();
+                txb_SDT.Text = row.Cells[2].Value.ToString();
+                txb_DiaChi.Text = row.Cells[3].Value.ToString();
+            }
+        }
     }
 }
