@@ -8,3 +8,13 @@ D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj
 D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
 D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.exe
 D:\Study\Năm 3\HKII\QuanTriHeCSDL\ThucHanh\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.pdb
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.exe.config
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.exe
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.pdb
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.AssemblyReference.cache
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.Form1.resources
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.Properties.Resources.resources
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.GenerateResource.cache
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.exe
+C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.pdb

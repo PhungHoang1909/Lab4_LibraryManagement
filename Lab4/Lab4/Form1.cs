@@ -2,45 +2,51 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace Lab4
 {
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        string connectionString = "Data Source=DESKTOP-9188G78\\SQLEXPRESS;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True;";
+        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void LoadGrid()
+        {
+            
+           conn.Open();
+           string query = "SELECT * FROM SINHVIEN";
+           SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+           DataTable table = new DataTable();
+           adapter.Fill(table);
+           dataGridView1.DataSource = table;
+           conn.Close();
+            
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'lab4_QuanLyThuVienDataSet.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.lab4_QuanLyThuVienDataSet.SINHVIEN);
+            LoadGrid();
 
         }
 
-        private void dgv_SinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dgv_SinhVien.Rows[e.RowIndex];
+        
 
-                txb_MSSV.Text = row.Cells[0].Value.ToString();
-                txb_TenSV.Text = row.Cells[1].Value.ToString();
-                txb_SDT.Text = row.Cells[2].Value.ToString();
-                txb_DiaChi.Text = row.Cells[3].Value.ToString();
-            }
-        }
-
-        private void LoadData()
+        /*private void LoadData()
         {
             string query = "SELECT * FROM SINHVIEN";
 
@@ -56,7 +62,7 @@ namespace Lab4
                 }
             }
 
-            dgv_SinhVien.DataSource = dataTable;
+            dataGridView1.DataSource = dataTable;
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -93,6 +99,53 @@ namespace Lab4
                     }
                 }
             }
+        }*/
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+
+                txb_MSSV.Text = row.Cells[0].Value.ToString();
+                txb_TenSV.Text = row.Cells[1].Value.ToString();
+                txb_SDT.Text = row.Cells[2].Value.ToString();
+                txb_DiaChi.Text = row.Cells[3].Value.ToString();
+            }
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            int mssv = int.Parse(txb_MSSV.Text);
+            string tenSV = txb_TenSV.Text;
+            string sdt = txb_SDT.Text;
+            string diaChi = txb_DiaChi.Text;
+
+            string query = "INSERT INTO SINHVIEN (MSSV, TenSV, SDT, DiaChi) VALUES (@MSSV, @TenSV, @SDT, @DiaChi)";
+            
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@MSSV", mssv);
+                command.Parameters.AddWithValue("@TenSV", tenSV);
+                command.Parameters.AddWithValue("@SDT", sdt);
+                command.Parameters.AddWithValue("@DiaChi", diaChi);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data added successfully.");
+
+                    LoadGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add data.");
+                }
+            }
+
         }
     }
 }
