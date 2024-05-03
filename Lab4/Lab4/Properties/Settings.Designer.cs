@@ -33,5 +33,16 @@ namespace Lab4.Properties {
                 return ((string)(this["Lab4_QuanLyThuVienConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated " +
+            "Security=True;TrustServerCertificate=True")]
+        public string Lab4_QuanLyThuVienConnectionString1 {
+            get {
+                return ((string)(this["Lab4_QuanLyThuVienConnectionString1"]));
+            }
+        }
     }
 }
