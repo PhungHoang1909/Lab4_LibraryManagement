@@ -37,6 +37,14 @@ namespace Lab4
             
         }
 
+        private void Cleartxb()
+        {
+            txb_MSSV.Text = "";
+            txb_TenSV.Text = "";
+            txb_SDT.Text = "";
+            txb_DiaChi.Text = "";
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'lab4_QuanLyThuVienDataSet.SINHVIEN' table. You can move, or remove it, as needed.
@@ -137,7 +145,7 @@ namespace Lab4
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Data added successfully.");
-
+                    Cleartxb();
                     LoadGrid();
                 }
                 else
@@ -146,6 +154,33 @@ namespace Lab4
                 }
             }
 
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            int mssvToDelete = int.Parse(txb_MSSV.Text); // Assuming txb_MSSVToDelete is a TextBox where the user inputs the MSSV to delete
+
+            string query = "DELETE FROM SINHVIEN WHERE MSSV = @MSSV";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@MSSV", mssvToDelete);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data deleted successfully.");
+                    Cleartxb();
+                    LoadGrid(); // Assuming LoadGrid() reloads the data grid after a change
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete data. MSSV not found.");
+                }
+            }
         }
     }
 }
