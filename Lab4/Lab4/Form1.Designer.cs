@@ -32,6 +32,7 @@
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
             this.panel_Sach = new System.Windows.Forms.Panel();
             this.panel_SinhVien = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txb_DiaChi = new System.Windows.Forms.TextBox();
             this.txb_SDT = new System.Windows.Forms.TextBox();
             this.txb_TenSV = new System.Windows.Forms.TextBox();
@@ -44,18 +45,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_SinhVien = new System.Windows.Forms.DataGridView();
-            this.mSSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_SinhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lab4_QuanLyThuVienDataSet)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +78,7 @@
             // 
             // panel_SinhVien
             // 
+            this.panel_SinhVien.Controls.Add(this.dataGridView1);
             this.panel_SinhVien.Controls.Add(this.txb_DiaChi);
             this.panel_SinhVien.Controls.Add(this.txb_SDT);
             this.panel_SinhVien.Controls.Add(this.txb_TenSV);
@@ -94,13 +91,23 @@
             this.panel_SinhVien.Controls.Add(this.label3);
             this.panel_SinhVien.Controls.Add(this.label2);
             this.panel_SinhVien.Controls.Add(this.label1);
-            this.panel_SinhVien.Controls.Add(this.dgv_SinhVien);
             this.panel_SinhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_SinhVien.Location = new System.Drawing.Point(893, 15);
             this.panel_SinhVien.Margin = new System.Windows.Forms.Padding(4);
             this.panel_SinhVien.Name = "panel_SinhVien";
             this.panel_SinhVien.Size = new System.Drawing.Size(556, 754);
             this.panel_SinhVien.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 367);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(526, 307);
+            this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txb_DiaChi
             // 
@@ -205,56 +212,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "TABLE: SinhVien";
             // 
-            // dgv_SinhVien
-            // 
-            this.dgv_SinhVien.AutoGenerateColumns = false;
-            this.dgv_SinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_SinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mSSVDataGridViewTextBoxColumn,
-            this.tenSVDataGridViewTextBoxColumn,
-            this.sDTDataGridViewTextBoxColumn,
-            this.diaChiDataGridViewTextBoxColumn});
-            this.dgv_SinhVien.DataSource = this.sINHVIENBindingSource;
-            this.dgv_SinhVien.Location = new System.Drawing.Point(4, 358);
-            this.dgv_SinhVien.Margin = new System.Windows.Forms.Padding(4);
-            this.dgv_SinhVien.Name = "dgv_SinhVien";
-            this.dgv_SinhVien.RowHeadersWidth = 51;
-            this.dgv_SinhVien.Size = new System.Drawing.Size(548, 392);
-            this.dgv_SinhVien.TabIndex = 0;
-            this.dgv_SinhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SinhVien_CellContentClick);
-            // 
-            // mSSVDataGridViewTextBoxColumn
-            // 
-            this.mSSVDataGridViewTextBoxColumn.DataPropertyName = "MSSV";
-            this.mSSVDataGridViewTextBoxColumn.HeaderText = "MSSV";
-            this.mSSVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mSSVDataGridViewTextBoxColumn.Name = "mSSVDataGridViewTextBoxColumn";
-            this.mSSVDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tenSVDataGridViewTextBoxColumn
-            // 
-            this.tenSVDataGridViewTextBoxColumn.DataPropertyName = "TenSV";
-            this.tenSVDataGridViewTextBoxColumn.HeaderText = "TenSV";
-            this.tenSVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenSVDataGridViewTextBoxColumn.Name = "tenSVDataGridViewTextBoxColumn";
-            this.tenSVDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sDTDataGridViewTextBoxColumn
-            // 
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // diaChiDataGridViewTextBoxColumn
-            // 
-            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.HeaderText = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
-            this.diaChiDataGridViewTextBoxColumn.Width = 125;
-            // 
             // sINHVIENBindingSource
             // 
             this.sINHVIENBindingSource.DataMember = "SINHVIEN";
@@ -285,7 +242,7 @@
             this.panel_Sach.ResumeLayout(false);
             this.panel_SinhVien.ResumeLayout(false);
             this.panel_SinhVien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_SinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lab4_QuanLyThuVienDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -297,14 +254,9 @@
         private System.Windows.Forms.DataGridView dgv_Sach;
         private System.Windows.Forms.Panel panel_Sach;
         private System.Windows.Forms.Panel panel_SinhVien;
-        private System.Windows.Forms.DataGridView dgv_SinhVien;
         private Lab4_QuanLyThuVienDataSet lab4_QuanLyThuVienDataSet;
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
         private Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mSSVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenSVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txb_DiaChi;
         private System.Windows.Forms.TextBox txb_SDT;
         private System.Windows.Forms.TextBox txb_TenSV;
@@ -317,6 +269,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
