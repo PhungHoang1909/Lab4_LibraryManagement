@@ -256,7 +256,7 @@ namespace Lab4
                 }
             }
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             // Check if MaSach is provided

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
             this.panel_Sach = new System.Windows.Forms.Panel();
+            this.Cbx_MSSV = new System.Windows.Forms.ComboBox();
             this.rtb_MoTa = new System.Windows.Forms.RichTextBox();
             this.txb_TheLoai = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
-            this.Cbx_MSSV = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -112,6 +112,16 @@
             this.panel_Sach.Name = "panel_Sach";
             this.panel_Sach.Size = new System.Drawing.Size(869, 754);
             this.panel_Sach.TabIndex = 2;
+            // 
+            // Cbx_MSSV
+            // 
+            this.Cbx_MSSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbx_MSSV.FormattingEnabled = true;
+            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 118);
+            this.Cbx_MSSV.Name = "Cbx_MSSV";
+            this.Cbx_MSSV.Size = new System.Drawing.Size(232, 33);
+            this.Cbx_MSSV.TabIndex = 31;
+            this.Cbx_MSSV.SelectedIndexChanged += new System.EventHandler(this.Cbx_MSSV_SelectedIndexChanged);
             // 
             // rtb_MoTa
             // 
@@ -410,15 +420,6 @@
             // sINHVIENTableAdapter
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // Cbx_MSSV
-            // 
-            this.Cbx_MSSV.FormattingEnabled = true;
-            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 118);
-            this.Cbx_MSSV.Name = "Cbx_MSSV";
-            this.Cbx_MSSV.Size = new System.Drawing.Size(232, 33);
-            this.Cbx_MSSV.TabIndex = 31;
-            this.Cbx_MSSV.SelectedIndexChanged += new System.EventHandler(this.Cbx_MSSV_SelectedIndexChanged);
             // 
             // Form1
             // 
