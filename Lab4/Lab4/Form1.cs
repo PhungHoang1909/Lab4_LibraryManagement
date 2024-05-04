@@ -236,23 +236,32 @@ namespace Lab4
         {
             int mssvToDelete = int.Parse(txb_MSSV.Text); // Assuming txb_MSSVToDelete is a TextBox where the user inputs the MSSV to delete
 
+            string query_2 = "UPDATE SACH SET MSSV = NULL WHERE MSSV = @MSSV";
+            using (SqlCommand command_2 = new SqlCommand(query_2, conn))
+            {
+                conn.Open();
+                command_2.Parameters.AddWithValue("@MSSV", mssvToDelete);
+                int rowsAffected_2 = command_2.ExecuteNonQuery();
+            }
+
             string query = "DELETE FROM SINHVIEN WHERE MSSV = @MSSV";
 
             using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@MSSV", mssvToDelete);
 
-                conn.Open();
                 int rowsAffected = command.ExecuteNonQuery();
                 conn.Close();
 
                 if (rowsAffected > 0)
                 {
+                    
                     MessageBox.Show("Data deleted successfully.");
                     ClearText();
                     LoadMSSV();
                     LoadGrid();
-                    LoadGridSach();// Assuming LoadGrid() reloads the data grid after a change
+                    LoadGridSach();
+                    
                 }
                 else
                 {
