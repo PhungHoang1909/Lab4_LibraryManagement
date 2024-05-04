@@ -328,7 +328,7 @@ namespace Lab4
             string Tacgia = txb_TacGia.Text;
             string theloai = txb_TheLoai.Text;
             int? mssv = null;
-            if (!string.IsNullOrEmpty(Cbx_MSSV.Text))
+            if (!string.IsNullOrEmpty(Cbx_MSSV.Text) && Cbx_MSSV.Enabled == true)
             {
                 mssv = int.Parse(Cbx_MSSV.Text);
             }
@@ -353,7 +353,7 @@ namespace Lab4
                 command.Parameters.AddWithValue("@mota", mota);
 
                 // Add MSSV parameter if it's provided
-                if (mssv.HasValue)
+                if (mssv.HasValue && Cbx_MSSV.Enabled == true)
                 {
                     command.Parameters.AddWithValue("@MSSV", mssv.Value);
                 }
@@ -548,6 +548,45 @@ namespace Lab4
                     MessageBox.Show("Failed to delete data. MaSach not found.");
                 }
                 ClearText();
+            }
+        }
+
+        private void bttn_XoaSV_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txb_MaSach.Text))
+            {
+                MessageBox.Show("Please select a Student to process.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Cbx_MSSV.Text))
+            {
+                MessageBox.Show("Book is not borrowed by any Student.");
+                return;
+            }
+            else
+            {
+                int maSachToDelete = int.Parse(txb_MaSach.Text);
+                string query_2 = "UPDATE SACH SET MSSV = NULL WHERE MaSach = @masach";
+                using (SqlCommand command_2 = new SqlCommand(query_2, conn))
+                {
+                    conn.Open();
+                    command_2.Parameters.AddWithValue("@masach", maSachToDelete);
+                    int rowsAffected_2 = command_2.ExecuteNonQuery();
+                    conn.Close();
+                    if (rowsAffected_2 > 0)
+                    {
+                        MessageBox.Show("Removed MSSV From Book Complete");
+                        LoadMSSV();
+                        LoadGrid();
+                        LoadGridSach();
+                        ClearText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong");
+                    }
+                }
             }
         }
     }

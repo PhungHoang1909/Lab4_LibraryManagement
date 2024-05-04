@@ -67,6 +67,7 @@
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
+            this.bttn_XoaSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // panel_Sach
             // 
+            this.panel_Sach.Controls.Add(this.bttn_XoaSV);
             this.panel_Sach.Controls.Add(this.chbox_enable_mssv);
             this.panel_Sach.Controls.Add(this.Cbx_MSSV);
             this.panel_Sach.Controls.Add(this.rtb_MoTa);
@@ -216,7 +218,7 @@
             // 
             // btn_XoaSach
             // 
-            this.btn_XoaSach.Location = new System.Drawing.Point(542, 287);
+            this.btn_XoaSach.Location = new System.Drawing.Point(458, 287);
             this.btn_XoaSach.Name = "btn_XoaSach";
             this.btn_XoaSach.Size = new System.Drawing.Size(123, 51);
             this.btn_XoaSach.TabIndex = 20;
@@ -226,7 +228,7 @@
             // 
             // btn_SuaSach
             // 
-            this.btn_SuaSach.Location = new System.Drawing.Point(349, 287);
+            this.btn_SuaSach.Location = new System.Drawing.Point(243, 287);
             this.btn_SuaSach.Name = "btn_SuaSach";
             this.btn_SuaSach.Size = new System.Drawing.Size(123, 51);
             this.btn_SuaSach.TabIndex = 19;
@@ -236,7 +238,7 @@
             // 
             // btn_ThemSach
             // 
-            this.btn_ThemSach.Location = new System.Drawing.Point(156, 287);
+            this.btn_ThemSach.Location = new System.Drawing.Point(43, 287);
             this.btn_ThemSach.Name = "btn_ThemSach";
             this.btn_ThemSach.Size = new System.Drawing.Size(123, 51);
             this.btn_ThemSach.TabIndex = 18;
@@ -449,6 +451,16 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
+            // bttn_XoaSV
+            // 
+            this.bttn_XoaSV.Location = new System.Drawing.Point(668, 287);
+            this.bttn_XoaSV.Name = "bttn_XoaSV";
+            this.bttn_XoaSV.Size = new System.Drawing.Size(123, 51);
+            this.bttn_XoaSV.TabIndex = 33;
+            this.bttn_XoaSV.Text = "Trả Sách";
+            this.bttn_XoaSV.UseVisualStyleBackColor = true;
+            this.bttn_XoaSV.Click += new System.EventHandler(this.bttn_XoaSV_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -513,6 +525,7 @@
         private System.Windows.Forms.RichTextBox rtb_MoTa;
         private System.Windows.Forms.ComboBox Cbx_MSSV;
         private System.Windows.Forms.CheckBox chbox_enable_mssv;
+        private System.Windows.Forms.Button bttn_XoaSV;
     }
 }
 
