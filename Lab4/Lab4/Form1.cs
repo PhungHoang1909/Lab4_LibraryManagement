@@ -270,6 +270,12 @@ namespace Lab4
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txb_MSSV.Text))
+            {
+                MessageBox.Show("Please select a row to update.");
+                return;
+            }
+
             int mssvToDelete = int.Parse(txb_MSSV.Text); // Assuming txb_MSSVToDelete is a TextBox where the user inputs the MSSV to delete
 
             string query_2 = "UPDATE SACH SET MSSV = NULL WHERE MSSV = @MSSV";
@@ -512,6 +518,11 @@ namespace Lab4
 
         private void btn_XoaSach_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txb_MaSach.Text))
+            {
+                MessageBox.Show("Please select a row to update.");
+                return;
+            }
             int maSachToDelete = int.Parse(txb_MaSach.Text); // Assuming txb_MSSVToDelete is a TextBox where the user inputs the MSSV to delete
 
             string query = "DELETE FROM SACH WHERE MaSach = @masach";
