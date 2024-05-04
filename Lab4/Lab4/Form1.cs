@@ -398,9 +398,16 @@ namespace Lab4
             string Tacgia = txb_TacGia.Text;
             string theloai = txb_TheLoai.Text;
             string mota = rtb_MoTa.Text;
-            
+            int? mssv = null;
+            if (!string.IsNullOrEmpty(Cbx_MSSV.Text))
+            {
+                mssv = int.Parse(Cbx_MSSV.Text);
+            }
             string query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota)";
-
+            if (mssv.HasValue && Cbx_MSSV.Enabled == true)
+            {
+                query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa, MSSV) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota, @mssv)";
+            }
             using (SqlCommand command = new SqlCommand(query, conn))
             {
                 
@@ -409,7 +416,10 @@ namespace Lab4
                 command.Parameters.AddWithValue("@Tacgia", Tacgia);
                 command.Parameters.AddWithValue("@theloai", theloai);
                 command.Parameters.AddWithValue("@mota", mota);
-
+                if (mssv.HasValue && Cbx_MSSV.Enabled == true)
+                {
+                    command.Parameters.AddWithValue("@MSSV", mssv.Value);
+                }
                 conn.Open();
                 int rowsAffected = command.ExecuteNonQuery();
                 conn.Close();
@@ -442,8 +452,13 @@ namespace Lab4
             }
             else
             {
-                Cbx_MSSV.Enabled= false;
+                Cbx_MSSV.Enabled = false;
             }
+        }
+
+        private void txb_MaSach_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
             this.panel_Sach = new System.Windows.Forms.Panel();
+            this.chbox_enable_mssv = new System.Windows.Forms.CheckBox();
             this.Cbx_MSSV = new System.Windows.Forms.ComboBox();
             this.rtb_MoTa = new System.Windows.Forms.RichTextBox();
             this.txb_TheLoai = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
-            this.chbox_enable_mssv = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -114,6 +114,16 @@
             this.panel_Sach.Name = "panel_Sach";
             this.panel_Sach.Size = new System.Drawing.Size(869, 754);
             this.panel_Sach.TabIndex = 2;
+            // 
+            // chbox_enable_mssv
+            // 
+            this.chbox_enable_mssv.AutoSize = true;
+            this.chbox_enable_mssv.Location = new System.Drawing.Point(797, 126);
+            this.chbox_enable_mssv.Name = "chbox_enable_mssv";
+            this.chbox_enable_mssv.Size = new System.Drawing.Size(18, 17);
+            this.chbox_enable_mssv.TabIndex = 32;
+            this.chbox_enable_mssv.UseVisualStyleBackColor = true;
+            this.chbox_enable_mssv.CheckedChanged += new System.EventHandler(this.chbox_enable_mssv_CheckedChanged);
             // 
             // Cbx_MSSV
             // 
@@ -190,11 +200,13 @@
             // 
             // txb_MaSach
             // 
+            this.txb_MaSach.Enabled = false;
             this.txb_MaSach.Location = new System.Drawing.Point(161, 78);
             this.txb_MaSach.Name = "txb_MaSach";
             this.txb_MaSach.ReadOnly = true;
             this.txb_MaSach.Size = new System.Drawing.Size(85, 30);
             this.txb_MaSach.TabIndex = 21;
+            this.txb_MaSach.TextChanged += new System.EventHandler(this.txb_MaSach_TextChanged);
             // 
             // btn_XoaSach
             // 
@@ -424,16 +436,6 @@
             // sINHVIENTableAdapter
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // chbox_enable_mssv
-            // 
-            this.chbox_enable_mssv.AutoSize = true;
-            this.chbox_enable_mssv.Location = new System.Drawing.Point(797, 126);
-            this.chbox_enable_mssv.Name = "chbox_enable_mssv";
-            this.chbox_enable_mssv.Size = new System.Drawing.Size(18, 17);
-            this.chbox_enable_mssv.TabIndex = 32;
-            this.chbox_enable_mssv.UseVisualStyleBackColor = true;
-            this.chbox_enable_mssv.CheckedChanged += new System.EventHandler(this.chbox_enable_mssv_CheckedChanged);
             // 
             // Form1
             // 
