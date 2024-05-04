@@ -66,6 +66,7 @@
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
+            this.chbox_enable_mssv = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // panel_Sach
             // 
+            this.panel_Sach.Controls.Add(this.chbox_enable_mssv);
             this.panel_Sach.Controls.Add(this.Cbx_MSSV);
             this.panel_Sach.Controls.Add(this.rtb_MoTa);
             this.panel_Sach.Controls.Add(this.txb_TheLoai);
@@ -116,7 +118,6 @@
             // Cbx_MSSV
             // 
             this.Cbx_MSSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cbx_MSSV.Enabled = false;
             this.Cbx_MSSV.FormattingEnabled = true;
             this.Cbx_MSSV.Location = new System.Drawing.Point(559, 118);
             this.Cbx_MSSV.Name = "Cbx_MSSV";
@@ -424,6 +425,16 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
+            // chbox_enable_mssv
+            // 
+            this.chbox_enable_mssv.AutoSize = true;
+            this.chbox_enable_mssv.Location = new System.Drawing.Point(797, 126);
+            this.chbox_enable_mssv.Name = "chbox_enable_mssv";
+            this.chbox_enable_mssv.Size = new System.Drawing.Size(18, 17);
+            this.chbox_enable_mssv.TabIndex = 32;
+            this.chbox_enable_mssv.UseVisualStyleBackColor = true;
+            this.chbox_enable_mssv.CheckedChanged += new System.EventHandler(this.chbox_enable_mssv_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -487,6 +498,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox rtb_MoTa;
         private System.Windows.Forms.ComboBox Cbx_MSSV;
+        private System.Windows.Forms.CheckBox chbox_enable_mssv;
     }
 }
 

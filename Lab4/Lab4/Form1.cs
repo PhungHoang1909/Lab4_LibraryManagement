@@ -72,6 +72,7 @@ namespace Lab4
             LoadGrid();
             LoadGridSach();
             LoadMSSV();
+            Cbx_MSSV.Enabled = false;
 
         }
 
@@ -426,6 +427,23 @@ namespace Lab4
                 }
             }
             ClearText();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbox_enable_mssv_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbox_enable_mssv.Checked)
+            {
+                Cbx_MSSV.Enabled = true;
+            }
+            else
+            {
+                Cbx_MSSV.Enabled= false;
+            }
         }
     }
 }
