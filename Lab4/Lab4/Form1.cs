@@ -18,7 +18,7 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9188G78\\SQLEXPRESS;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
         
         public Form1()
         {
@@ -38,10 +38,24 @@ namespace Lab4
             
         }
 
+        private void LoadGridSach()
+        {
+
+            conn.Open();
+            string query = "SELECT * FROM SACH";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dgv_Sach.DataSource = table;
+            conn.Close();
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'lab4_QuanLyThuVienDataSet.SINHVIEN' table. You can move, or remove it, as needed.
             LoadGrid();
+            LoadGridSach();
 
         }
 
@@ -222,6 +236,27 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to delete data. MSSV not found.");
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_Sach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_Sach.Rows[e.RowIndex];
+
+                txb_MaSach.Text = row.Cells[0].Value.ToString();
+                txb_TenSach.Text = row.Cells[1].Value.ToString();
+                txb_NXB.Text = row.Cells[2].Value.ToString();
+                txb_TacGia.Text = row.Cells[3].Value.ToString();
+                txb_TheLoai.Text = row.Cells[4].Value.ToString();
+                rtb_MoTa.Text = row.Cells[5].Value.ToString();
+                txb_MSSV_FK.Text = row.Cells[6].Value.ToString();
             }
         }
     }
