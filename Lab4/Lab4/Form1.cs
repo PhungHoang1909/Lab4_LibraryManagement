@@ -18,7 +18,7 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
         
         public Form1()
         {
@@ -196,6 +196,33 @@ namespace Lab4
                 }
             }
             ClearText();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            int mssvToDelete = int.Parse(txb_MSSV.Text); // Assuming txb_MSSVToDelete is a TextBox where the user inputs the MSSV to delete
+
+            string query = "DELETE FROM SINHVIEN WHERE MSSV = @MSSV";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@MSSV", mssvToDelete);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data deleted successfully.");
+                    ClearText();
+                    LoadGrid(); // Assuming LoadGrid() reloads the data grid after a change
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete data. MSSV not found.");
+                }
+            }
         }
     }
 }
