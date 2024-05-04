@@ -259,7 +259,50 @@ namespace Lab4
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Check if MSSV is provided
+            if (string.IsNullOrEmpty(txb_MaSach.Text))
+            {
+                MessageBox.Show("Please select a row to update.");
+                return;
+            }
 
+            int maSach = int.Parse(txb_MaSach.Text);
+            string tenSach = txb_TenSach.Text;
+            string nxb = txb_NXB.Text;
+            string Tacgia = txb_TacGia.Text;
+            string theloai = txb_TheLoai.Text;
+            int mssv = int.Parse(Cbx_MSSV.Text);
+            string mota = rtb_MoTa.Text;
+
+            string query = "UPDATE SACH SET TenSach = @tenSach, NXB = @nxb, TG = @Tacgia, TheLoai = @Tacgia, MoTa = @mota, MSSV = @mssv WHERE MaSach = @maSach";
+    
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@maSach", maSach);
+                command.Parameters.AddWithValue("@MSSV", mssv);
+                command.Parameters.AddWithValue("@TenSach", tenSach);
+                command.Parameters.AddWithValue("@nxb", nxb);
+                command.Parameters.AddWithValue("@tacgia", Tacgia);
+                command.Parameters.AddWithValue("@theloai", theloai);
+                command.Parameters.AddWithValue("@mota", mota);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data updated successfully.");
+                    LoadMSSV();
+                    LoadGrid();
+                    LoadGridSach();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update data.");
+                }
+            }
+            ClearText();
         }
 
         private void dgv_Sach_CellContentClick(object sender, DataGridViewCellEventArgs e)
