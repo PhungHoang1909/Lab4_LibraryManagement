@@ -18,7 +18,7 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9188G78\\SQLEXPRESS;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
         
         public Form1()
         {
@@ -36,6 +36,21 @@ namespace Lab4
            dataGridView1.DataSource = table;
            conn.Close();
             
+        }
+
+        private void LoadMSSV()
+        {
+            conn.Open();
+            string query = "SELECT MSSV FROM SINHVIEN";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            Cbx_MSSV.DataSource = ds;
+            conn.Close();
+
+            Cbx_MSSV.DataSource = ds.Tables[0]; // You need to bind to the DataTable, not the entire DataSet
+            Cbx_MSSV.DisplayMember = "MSSV"; // Specify the display member
+            Cbx_MSSV.ValueMember = "MSSV"; // Specify the value member
         }
 
         private void LoadGridSach()
@@ -56,6 +71,7 @@ namespace Lab4
             // TODO: This line of code loads data into the 'lab4_QuanLyThuVienDataSet.SINHVIEN' table. You can move, or remove it, as needed.
             LoadGrid();
             LoadGridSach();
+            LoadMSSV();
 
         }
 
@@ -161,6 +177,7 @@ namespace Lab4
                     MessageBox.Show("Data added successfully.");
 
                     LoadGrid();
+                    LoadMSSV();
                 }
                 else
                 {
@@ -201,7 +218,7 @@ namespace Lab4
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Data updated successfully.");
-
+                    LoadMSSV();
                     LoadGrid();
                 }
                 else
@@ -230,6 +247,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Data deleted successfully.");
                     ClearText();
+                    LoadMSSV();
                     LoadGrid(); // Assuming LoadGrid() reloads the data grid after a change
                 }
                 else
@@ -238,11 +256,118 @@ namespace Lab4
                 }
             }
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
+            // Check if MaSach is provided
+            if (string.IsNullOrEmpty(txb_MaSach.Text))
+            {
+                MessageBox.Show("Please select a row to update.");
+                return;
+            }
 
+            int maSach = int.Parse(txb_MaSach.Text);
+            string tenSach = txb_TenSach.Text;
+            string nxb = txb_NXB.Text;
+            string Tacgia = txb_TacGia.Text;
+            string theloai = txb_TheLoai.Text;
+            int? mssv = null;
+            if (!string.IsNullOrEmpty(Cbx_MSSV.Text))
+            {
+                mssv = int.Parse(Cbx_MSSV.Text);
+            }
+            string mota = rtb_MoTa.Text;
+
+            string query = "UPDATE SACH SET TenSach = @TenSach, NXB = @nxb, TG = @Tacgia, TheLoai = @theloai, MoTa = @mota";
+
+            // Add MSSV to the query if it's provided
+            if (mssv.HasValue)
+            {
+                query += ", MSSV = @MSSV";
+            }
+            query += " WHERE MaSach = @maSach";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@maSach", maSach);
+                command.Parameters.AddWithValue("@TenSach", tenSach);
+                command.Parameters.AddWithValue("@nxb", nxb);
+                command.Parameters.AddWithValue("@Tacgia", Tacgia);
+                command.Parameters.AddWithValue("@theloai", theloai);
+                command.Parameters.AddWithValue("@mota", mota);
+
+                // Add MSSV parameter if it's provided
+                if (mssv.HasValue)
+                {
+                    command.Parameters.AddWithValue("@MSSV", mssv.Value);
+                }
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data updated successfully.");
+                    LoadMSSV();
+                    LoadGrid();
+                    LoadGridSach();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update data.");
+                }
+            }
+            ClearText();
         }
+
+        /*      private void button2_Click(object sender, EventArgs e)
+              {
+                  // Check if MSSV is provided
+                  if (string.IsNullOrEmpty(txb_MaSach.Text))
+                  {
+                      MessageBox.Show("Please select a row to update.");
+                      return;
+                  }
+
+                  int maSach = int.Parse(txb_MaSach.Text);
+                  string tenSach = txb_TenSach.Text;
+                  string nxb = txb_NXB.Text;
+                  string Tacgia = txb_TacGia.Text;
+                  string theloai = txb_TheLoai.Text;
+                  int mssv = int.Parse(Cbx_MSSV.Text);
+                  string mota = rtb_MoTa.Text;
+
+                  string query = "UPDATE SACH SET TenSach = @tenSach, NXB = @nxb, TG = @Tacgia, TheLoai = @Tacgia, MoTa = @mota, MSSV = @mssv WHERE MaSach = @maSach";
+
+                  using (SqlCommand command = new SqlCommand(query, conn))
+                  {
+                      command.Parameters.AddWithValue("@maSach", maSach);
+                      command.Parameters.AddWithValue("@MSSV", mssv);
+                      command.Parameters.AddWithValue("@TenSach", tenSach);
+                      command.Parameters.AddWithValue("@nxb", nxb);
+                      command.Parameters.AddWithValue("@tacgia", Tacgia);
+                      command.Parameters.AddWithValue("@theloai", theloai);
+                      command.Parameters.AddWithValue("@mota", mota);
+
+                      conn.Open();
+                      int rowsAffected = command.ExecuteNonQuery();
+                      conn.Close();
+
+                      if (rowsAffected > 0)
+                      {
+                          MessageBox.Show("Data updated successfully.");
+                          LoadMSSV();
+                          LoadGrid();
+                          LoadGridSach();
+                      }
+                      else
+                      {
+                          MessageBox.Show("Failed to update data.");
+                      }
+                  }
+                  ClearText();
+              }*/
 
         private void dgv_Sach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -256,8 +381,13 @@ namespace Lab4
                 txb_TacGia.Text = row.Cells[3].Value.ToString();
                 txb_TheLoai.Text = row.Cells[4].Value.ToString();
                 rtb_MoTa.Text = row.Cells[5].Value.ToString();
-                txb_MSSV_FK.Text = row.Cells[6].Value.ToString();
+                Cbx_MSSV.Text = row.Cells[6].Value.ToString();
             }
+        }
+
+        private void Cbx_MSSV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
