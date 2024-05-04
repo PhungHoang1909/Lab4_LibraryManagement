@@ -576,7 +576,7 @@ namespace Lab4
                     conn.Close();
                     if (rowsAffected_2 > 0)
                     {
-                        MessageBox.Show("Removed MSSV From Book Complete");
+                        MessageBox.Show("Book Returned Complete");
                         LoadMSSV();
                         LoadGrid();
                         LoadGridSach();
