@@ -80,11 +80,17 @@
             this.dgv_Sach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Sach.Location = new System.Drawing.Point(4, 358);
             this.dgv_Sach.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_Sach.MultiSelect = false;
             this.dgv_Sach.Name = "dgv_Sach";
+            this.dgv_Sach.ReadOnly = true;
             this.dgv_Sach.RowHeadersWidth = 51;
+            this.dgv_Sach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Sach.Size = new System.Drawing.Size(861, 392);
             this.dgv_Sach.TabIndex = 0;
+            this.dgv_Sach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellContentClick);
             this.dgv_Sach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellContentClick);
+            this.dgv_Sach.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellContentClick);
+            this.dgv_Sach.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellContentClick);
             // 
             // panel_Sach
             // 
@@ -311,13 +317,18 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 358);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(526, 392);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txb_DiaChi
             // 
@@ -344,7 +355,7 @@
             // 
             this.txb_MSSV.Location = new System.Drawing.Point(188, 78);
             this.txb_MSSV.Name = "txb_MSSV";
-            this.txb_MSSV.Size = new System.Drawing.Size(317, 30);
+            this.txb_MSSV.Size = new System.Drawing.Size(72, 30);
             this.txb_MSSV.TabIndex = 9;
             // 
             // btn_Xoa

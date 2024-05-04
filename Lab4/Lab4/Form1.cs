@@ -51,19 +51,37 @@ namespace Lab4
             Cbx_MSSV.DataSource = ds.Tables[0]; // You need to bind to the DataTable, not the entire DataSet
             Cbx_MSSV.DisplayMember = "MSSV"; // Specify the display member
             Cbx_MSSV.ValueMember = "MSSV"; // Specify the value member
+            Select1stRow();
         }
 
         private void LoadGridSach()
         {
-
+            
             conn.Open();
             string query = "SELECT * FROM SACH";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
             dgv_Sach.DataSource = table;
+            dgv_Sach.Rows[0].Selected = true;
+            
             conn.Close();
+            
+        }
+        private void Select1stRow()
+        {
+           /* txb_MSSV.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
+            txb_TenSV.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+            txb_SDT.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            txb_DiaChi.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
 
+            *//*txb_MaSach.Text = dgv_Sach.Rows[0].Cells[0].Value.ToString();
+            txb_TenSach.Text = dgv_Sach.Rows[0].Cells[1].Value.ToString();
+            txb_NXB.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            txb_TacGia.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+            txb_TheLoai.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
+            rtb_MoTa.Text = dataGridView1.Rows[0].Cells[5].Value.ToString();
+            Cbx_MSSV.Text = dataGridView1.Rows[0].Cells[6].Value.ToString();*/
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -199,6 +217,12 @@ namespace Lab4
                 return;
             }
 
+            if (string.IsNullOrEmpty(txb_TenSV.Text) || string.IsNullOrEmpty(txb_SDT.Text) || string.IsNullOrEmpty(txb_DiaChi.Text))
+            {
+                MessageBox.Show("Please don't leave any textbox empty.");
+                return;
+            }
+
             int mssv = int.Parse(txb_MSSV.Text);
             string tenSV = txb_TenSV.Text;
             string sdt = txb_SDT.Text;
@@ -214,22 +238,34 @@ namespace Lab4
                 command.Parameters.AddWithValue("@DiaChi", diaChi);
 
                 conn.Open();
-                int rowsAffected = command.ExecuteNonQuery();
-                conn.Close();
+                int rowsAffected = 0;
+                try
+                {
+                    rowsAffected = command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Display an error message
+                    MessageBox.Show("An error occurred: " + ex.Message, "Please don't change the MSSV", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                    
+                }
+                conn.Close();
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Data updated successfully.");
                     LoadMSSV();
                     LoadGrid();
                     LoadGridSach();
+                    
                 }
                 else
                 {
                     MessageBox.Show("Failed to update data.");
                 }
+                ClearText();
             }
-            ClearText();
+            
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
@@ -257,7 +293,7 @@ namespace Lab4
                 {
                     
                     MessageBox.Show("Data deleted successfully.");
-                    ClearText();
+                    
                     LoadMSSV();
                     LoadGrid();
                     LoadGridSach();
@@ -267,6 +303,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to delete data. MSSV not found.");
                 }
+                ClearText();
             }
         }
         
@@ -490,15 +527,16 @@ namespace Lab4
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Data deleted successfully.");
-                    ClearText();
+                    
                     LoadMSSV();
                     LoadGrid();
                     LoadGridSach();// Assuming LoadGrid() reloads the data grid after a change
                 }
                 else
                 {
-                    MessageBox.Show("Failed to delete data. MSSV not found.");
+                    MessageBox.Show("Failed to delete data. MaSach not found.");
                 }
+                ClearText();
             }
         }
     }
