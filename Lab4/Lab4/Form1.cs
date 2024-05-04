@@ -178,6 +178,7 @@ namespace Lab4
                     MessageBox.Show("Data added successfully.");
 
                     LoadGrid();
+                    LoadGridSach();
                     LoadMSSV();
                 }
                 else
@@ -221,6 +222,7 @@ namespace Lab4
                     MessageBox.Show("Data updated successfully.");
                     LoadMSSV();
                     LoadGrid();
+                    LoadGridSach();
                 }
                 else
                 {
@@ -249,7 +251,8 @@ namespace Lab4
                     MessageBox.Show("Data deleted successfully.");
                     ClearText();
                     LoadMSSV();
-                    LoadGrid(); // Assuming LoadGrid() reloads the data grid after a change
+                    LoadGrid();
+                    LoadGridSach();// Assuming LoadGrid() reloads the data grid after a change
                 }
                 else
                 {
@@ -459,6 +462,35 @@ namespace Lab4
         private void txb_MaSach_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_XoaSach_Click(object sender, EventArgs e)
+        {
+            int maSachToDelete = int.Parse(txb_MaSach.Text); // Assuming txb_MSSVToDelete is a TextBox where the user inputs the MSSV to delete
+
+            string query = "DELETE FROM SACH WHERE MaSach = @masach";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@masach", maSachToDelete);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data deleted successfully.");
+                    ClearText();
+                    LoadMSSV();
+                    LoadGrid();
+                    LoadGridSach();// Assuming LoadGrid() reloads the data grid after a change
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete data. MSSV not found.");
+                }
+            }
         }
     }
 }
