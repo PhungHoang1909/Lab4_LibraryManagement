@@ -18,3 +18,13 @@ C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csp
 C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
 C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.exe
 C:\Study\C#\HQTCSDL\Git_Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.pdb
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.exe.config
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.exe
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\bin\Debug\Lab4.pdb
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.AssemblyReference.cache
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.Form1.resources
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.Properties.Resources.resources
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.GenerateResource.cache
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.exe
+C:\Y3HK2\Quản trị hệ CSDL\Lab4\Lab4_LibraryManagement\Lab4\Lab4\obj\Debug\Lab4.pdb

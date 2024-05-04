@@ -11,13 +11,14 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Lab4
 {
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9188G78\\SQLEXPRESS;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
         
         public Form1()
         {
@@ -44,7 +45,7 @@ namespace Lab4
 
         }
 
-        
+
 
         /*private void LoadData()
         {
@@ -100,6 +101,13 @@ namespace Lab4
                 }
             }
         }*/
+        private void ClearText()
+        {
+            txb_MSSV.Text = "";
+            txb_TenSV.Text = "";
+            txb_SDT.Text = "";
+            txb_DiaChi.Text = "";
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -145,7 +153,49 @@ namespace Lab4
                     MessageBox.Show("Failed to add data.");
                 }
             }
+            ClearText();
+        }
 
+
+        private void btn_Sua_Click_1(object sender, EventArgs e)
+        {
+            // Check if MSSV is provided
+            if (string.IsNullOrEmpty(txb_MSSV.Text))
+            {
+                MessageBox.Show("Please select a row to update.");
+                return;
+            }
+
+            int mssv = int.Parse(txb_MSSV.Text);
+            string tenSV = txb_TenSV.Text;
+            string sdt = txb_SDT.Text;
+            string diaChi = txb_DiaChi.Text;
+
+            string query = "UPDATE SINHVIEN SET TenSV = @TenSV, SDT = @SDT, DiaChi = @DiaChi WHERE MSSV = @MSSV";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@MSSV", mssv);
+                command.Parameters.AddWithValue("@TenSV", tenSV);
+                command.Parameters.AddWithValue("@SDT", sdt);
+                command.Parameters.AddWithValue("@DiaChi", diaChi);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data updated successfully.");
+
+                    LoadGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update data.");
+                }
+            }
+            ClearText();
         }
     }
 }
