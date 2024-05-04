@@ -18,7 +18,7 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9188G78\\SQLEXPRESS;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
         
         public Form1()
         {
@@ -36,6 +36,21 @@ namespace Lab4
            dataGridView1.DataSource = table;
            conn.Close();
             
+        }
+
+        private void LoadMSSV()
+        {
+            conn.Open();
+            string query = "SELECT MSSV FROM SINHVIEN";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            Cbx_MSSV.DataSource = ds;
+            conn.Close();
+
+            Cbx_MSSV.DataSource = ds.Tables[0]; // You need to bind to the DataTable, not the entire DataSet
+            Cbx_MSSV.DisplayMember = "MSSV"; // Specify the display member
+            Cbx_MSSV.ValueMember = "MSSV"; // Specify the value member
         }
 
         private void LoadGridSach()
@@ -56,6 +71,7 @@ namespace Lab4
             // TODO: This line of code loads data into the 'lab4_QuanLyThuVienDataSet.SINHVIEN' table. You can move, or remove it, as needed.
             LoadGrid();
             LoadGridSach();
+            LoadMSSV();
 
         }
 
@@ -161,6 +177,7 @@ namespace Lab4
                     MessageBox.Show("Data added successfully.");
 
                     LoadGrid();
+                    LoadMSSV();
                 }
                 else
                 {
@@ -201,7 +218,7 @@ namespace Lab4
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Data updated successfully.");
-
+                    LoadMSSV();
                     LoadGrid();
                 }
                 else
@@ -230,6 +247,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Data deleted successfully.");
                     ClearText();
+                    LoadMSSV();
                     LoadGrid(); // Assuming LoadGrid() reloads the data grid after a change
                 }
                 else
@@ -256,8 +274,13 @@ namespace Lab4
                 txb_TacGia.Text = row.Cells[3].Value.ToString();
                 txb_TheLoai.Text = row.Cells[4].Value.ToString();
                 rtb_MoTa.Text = row.Cells[5].Value.ToString();
-                txb_MSSV_FK.Text = row.Cells[6].Value.ToString();
+                Cbx_MSSV.Text = row.Cells[6].Value.ToString();
             }
+        }
+
+        private void Cbx_MSSV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

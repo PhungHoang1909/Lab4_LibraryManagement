@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
             this.panel_Sach = new System.Windows.Forms.Panel();
+            this.rtb_MoTa = new System.Windows.Forms.RichTextBox();
+            this.txb_TheLoai = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.txb_TacGia = new System.Windows.Forms.TextBox();
             this.txb_NXB = new System.Windows.Forms.TextBox();
             this.txb_TenSach = new System.Windows.Forms.TextBox();
@@ -60,12 +65,7 @@
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
-            this.txb_MSSV_FK = new System.Windows.Forms.TextBox();
-            this.txb_TheLoai = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.rtb_MoTa = new System.Windows.Forms.RichTextBox();
+            this.Cbx_MSSV = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -87,8 +87,8 @@
             // 
             // panel_Sach
             // 
+            this.panel_Sach.Controls.Add(this.Cbx_MSSV);
             this.panel_Sach.Controls.Add(this.rtb_MoTa);
-            this.panel_Sach.Controls.Add(this.txb_MSSV_FK);
             this.panel_Sach.Controls.Add(this.txb_TheLoai);
             this.panel_Sach.Controls.Add(this.label11);
             this.panel_Sach.Controls.Add(this.label12);
@@ -112,6 +112,48 @@
             this.panel_Sach.Name = "panel_Sach";
             this.panel_Sach.Size = new System.Drawing.Size(869, 754);
             this.panel_Sach.TabIndex = 2;
+            // 
+            // rtb_MoTa
+            // 
+            this.rtb_MoTa.Location = new System.Drawing.Point(559, 160);
+            this.rtb_MoTa.Name = "rtb_MoTa";
+            this.rtb_MoTa.Size = new System.Drawing.Size(232, 96);
+            this.rtb_MoTa.TabIndex = 30;
+            this.rtb_MoTa.Text = "";
+            // 
+            // txb_TheLoai
+            // 
+            this.txb_TheLoai.Location = new System.Drawing.Point(559, 78);
+            this.txb_TheLoai.Name = "txb_TheLoai";
+            this.txb_TheLoai.Size = new System.Drawing.Size(232, 30);
+            this.txb_TheLoai.TabIndex = 28;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(436, 160);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 25);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Mô Tả:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(436, 118);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 25);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "MSSV:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(436, 78);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(95, 25);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Thể Loại:";
             // 
             // txb_TacGia
             // 
@@ -369,54 +411,14 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // txb_MSSV_FK
+            // Cbx_MSSV
             // 
-            this.txb_MSSV_FK.Location = new System.Drawing.Point(559, 118);
-            this.txb_MSSV_FK.Name = "txb_MSSV_FK";
-            this.txb_MSSV_FK.Size = new System.Drawing.Size(232, 30);
-            this.txb_MSSV_FK.TabIndex = 29;
-            // 
-            // txb_TheLoai
-            // 
-            this.txb_TheLoai.Location = new System.Drawing.Point(559, 78);
-            this.txb_TheLoai.Name = "txb_TheLoai";
-            this.txb_TheLoai.Size = new System.Drawing.Size(232, 30);
-            this.txb_TheLoai.TabIndex = 28;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(436, 160);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 25);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Mô Tả:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(436, 118);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 25);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "MSSV:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(436, 78);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 25);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Thể Loại:";
-            // 
-            // rtb_MoTa
-            // 
-            this.rtb_MoTa.Location = new System.Drawing.Point(559, 160);
-            this.rtb_MoTa.Name = "rtb_MoTa";
-            this.rtb_MoTa.Size = new System.Drawing.Size(232, 96);
-            this.rtb_MoTa.TabIndex = 30;
-            this.rtb_MoTa.Text = "";
+            this.Cbx_MSSV.FormattingEnabled = true;
+            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 118);
+            this.Cbx_MSSV.Name = "Cbx_MSSV";
+            this.Cbx_MSSV.Size = new System.Drawing.Size(232, 33);
+            this.Cbx_MSSV.TabIndex = 31;
+            this.Cbx_MSSV.SelectedIndexChanged += new System.EventHandler(this.Cbx_MSSV_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -475,12 +477,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txb_MSSV_FK;
         private System.Windows.Forms.TextBox txb_TheLoai;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox rtb_MoTa;
+        private System.Windows.Forms.ComboBox Cbx_MSSV;
     }
 }
 
