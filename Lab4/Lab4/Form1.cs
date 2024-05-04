@@ -18,7 +18,7 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
         
         public Form1()
         {
@@ -388,6 +388,44 @@ namespace Lab4
         private void Cbx_MSSV_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_ThemSach_Click(object sender, EventArgs e)
+        {
+            string tenSach = txb_TenSach.Text;
+            string nxb = txb_NXB.Text;
+            string Tacgia = txb_TacGia.Text;
+            string theloai = txb_TheLoai.Text;
+            string mota = rtb_MoTa.Text;
+            
+            string query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota)";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                
+                command.Parameters.AddWithValue("@TenSach", tenSach);
+                command.Parameters.AddWithValue("@nxb", nxb);
+                command.Parameters.AddWithValue("@Tacgia", Tacgia);
+                command.Parameters.AddWithValue("@theloai", theloai);
+                command.Parameters.AddWithValue("@mota", mota);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data Added successfully.");
+                    LoadMSSV();
+                    LoadGrid();
+                    LoadGridSach();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add data.");
+                }
+            }
+            ClearText();
         }
     }
 }

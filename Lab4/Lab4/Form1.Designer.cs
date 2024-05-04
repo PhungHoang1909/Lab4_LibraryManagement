@@ -116,6 +116,7 @@
             // Cbx_MSSV
             // 
             this.Cbx_MSSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbx_MSSV.Enabled = false;
             this.Cbx_MSSV.FormattingEnabled = true;
             this.Cbx_MSSV.Location = new System.Drawing.Point(559, 118);
             this.Cbx_MSSV.Name = "Cbx_MSSV";
@@ -190,7 +191,8 @@
             // 
             this.txb_MaSach.Location = new System.Drawing.Point(161, 78);
             this.txb_MaSach.Name = "txb_MaSach";
-            this.txb_MaSach.Size = new System.Drawing.Size(232, 30);
+            this.txb_MaSach.ReadOnly = true;
+            this.txb_MaSach.Size = new System.Drawing.Size(85, 30);
             this.txb_MaSach.TabIndex = 21;
             // 
             // btn_XoaSach
@@ -220,6 +222,7 @@
             this.btn_ThemSach.TabIndex = 18;
             this.btn_ThemSach.Text = "Thêm";
             this.btn_ThemSach.UseVisualStyleBackColor = true;
+            this.btn_ThemSach.Click += new System.EventHandler(this.btn_ThemSach_Click);
             // 
             // label6
             // 
