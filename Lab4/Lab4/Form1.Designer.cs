@@ -65,6 +65,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
@@ -72,6 +78,7 @@
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lab4_QuanLyThuVienDataSet)).BeginInit();
             this.SuspendLayout();
@@ -79,14 +86,14 @@
             // dgv_Sach
             // 
             this.dgv_Sach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Sach.Location = new System.Drawing.Point(4, 358);
+            this.dgv_Sach.Location = new System.Drawing.Point(4, 349);
             this.dgv_Sach.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Sach.MultiSelect = false;
             this.dgv_Sach.Name = "dgv_Sach";
             this.dgv_Sach.ReadOnly = true;
             this.dgv_Sach.RowHeadersWidth = 51;
             this.dgv_Sach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Sach.Size = new System.Drawing.Size(861, 392);
+            this.dgv_Sach.Size = new System.Drawing.Size(857, 332);
             this.dgv_Sach.TabIndex = 0;
             this.dgv_Sach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellContentClick);
             this.dgv_Sach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellContentClick);
@@ -95,6 +102,8 @@
             // 
             // panel_Sach
             // 
+            this.panel_Sach.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_Sach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_Sach.Controls.Add(this.bttn_XoaSV);
             this.panel_Sach.Controls.Add(this.chbox_enable_mssv);
             this.panel_Sach.Controls.Add(this.Cbx_MSSV);
@@ -117,15 +126,15 @@
             this.panel_Sach.Controls.Add(this.label10);
             this.panel_Sach.Controls.Add(this.dgv_Sach);
             this.panel_Sach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Sach.Location = new System.Drawing.Point(16, 15);
+            this.panel_Sach.Location = new System.Drawing.Point(16, 129);
             this.panel_Sach.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Sach.Name = "panel_Sach";
-            this.panel_Sach.Size = new System.Drawing.Size(869, 754);
+            this.panel_Sach.Size = new System.Drawing.Size(869, 689);
             this.panel_Sach.TabIndex = 2;
             // 
             // bttn_XoaSV
             // 
-            this.bttn_XoaSV.Location = new System.Drawing.Point(668, 287);
+            this.bttn_XoaSV.Location = new System.Drawing.Point(668, 291);
             this.bttn_XoaSV.Name = "bttn_XoaSV";
             this.bttn_XoaSV.Size = new System.Drawing.Size(123, 51);
             this.bttn_XoaSV.TabIndex = 33;
@@ -136,7 +145,7 @@
             // chbox_enable_mssv
             // 
             this.chbox_enable_mssv.AutoSize = true;
-            this.chbox_enable_mssv.Location = new System.Drawing.Point(797, 126);
+            this.chbox_enable_mssv.Location = new System.Drawing.Point(797, 130);
             this.chbox_enable_mssv.Name = "chbox_enable_mssv";
             this.chbox_enable_mssv.Size = new System.Drawing.Size(18, 17);
             this.chbox_enable_mssv.TabIndex = 32;
@@ -145,14 +154,14 @@
             // 
             // Cbx_MSSV
             // 
-            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 121);
+            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 125);
             this.Cbx_MSSV.Name = "Cbx_MSSV";
             this.Cbx_MSSV.Size = new System.Drawing.Size(232, 33);
             this.Cbx_MSSV.TabIndex = 34;
             // 
             // rtb_MoTa
             // 
-            this.rtb_MoTa.Location = new System.Drawing.Point(559, 160);
+            this.rtb_MoTa.Location = new System.Drawing.Point(559, 164);
             this.rtb_MoTa.Name = "rtb_MoTa";
             this.rtb_MoTa.Size = new System.Drawing.Size(232, 96);
             this.rtb_MoTa.TabIndex = 30;
@@ -160,7 +169,7 @@
             // 
             // txb_TheLoai
             // 
-            this.txb_TheLoai.Location = new System.Drawing.Point(559, 78);
+            this.txb_TheLoai.Location = new System.Drawing.Point(559, 82);
             this.txb_TheLoai.Name = "txb_TheLoai";
             this.txb_TheLoai.Size = new System.Drawing.Size(232, 30);
             this.txb_TheLoai.TabIndex = 28;
@@ -168,7 +177,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(436, 160);
+            this.label11.Location = new System.Drawing.Point(436, 164);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 25);
             this.label11.TabIndex = 27;
@@ -177,7 +186,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(436, 118);
+            this.label12.Location = new System.Drawing.Point(436, 122);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 25);
             this.label12.TabIndex = 26;
@@ -186,7 +195,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(436, 78);
+            this.label13.Location = new System.Drawing.Point(436, 82);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(95, 25);
             this.label13.TabIndex = 25;
@@ -194,28 +203,28 @@
             // 
             // txb_TacGia
             // 
-            this.txb_TacGia.Location = new System.Drawing.Point(161, 203);
+            this.txb_TacGia.Location = new System.Drawing.Point(161, 207);
             this.txb_TacGia.Name = "txb_TacGia";
             this.txb_TacGia.Size = new System.Drawing.Size(232, 30);
             this.txb_TacGia.TabIndex = 24;
             // 
             // txb_NXB
             // 
-            this.txb_NXB.Location = new System.Drawing.Point(161, 160);
+            this.txb_NXB.Location = new System.Drawing.Point(161, 164);
             this.txb_NXB.Name = "txb_NXB";
             this.txb_NXB.Size = new System.Drawing.Size(232, 30);
             this.txb_NXB.TabIndex = 23;
             // 
             // txb_TenSach
             // 
-            this.txb_TenSach.Location = new System.Drawing.Point(161, 118);
+            this.txb_TenSach.Location = new System.Drawing.Point(161, 122);
             this.txb_TenSach.Name = "txb_TenSach";
             this.txb_TenSach.Size = new System.Drawing.Size(232, 30);
             this.txb_TenSach.TabIndex = 22;
             // 
             // txb_MaSach
             // 
-            this.txb_MaSach.Location = new System.Drawing.Point(161, 73);
+            this.txb_MaSach.Location = new System.Drawing.Point(161, 77);
             this.txb_MaSach.Name = "txb_MaSach";
             this.txb_MaSach.ReadOnly = true;
             this.txb_MaSach.Size = new System.Drawing.Size(232, 30);
@@ -223,7 +232,7 @@
             // 
             // btn_XoaSach
             // 
-            this.btn_XoaSach.Location = new System.Drawing.Point(458, 287);
+            this.btn_XoaSach.Location = new System.Drawing.Point(458, 291);
             this.btn_XoaSach.Name = "btn_XoaSach";
             this.btn_XoaSach.Size = new System.Drawing.Size(123, 51);
             this.btn_XoaSach.TabIndex = 20;
@@ -233,7 +242,7 @@
             // 
             // btn_SuaSach
             // 
-            this.btn_SuaSach.Location = new System.Drawing.Point(243, 287);
+            this.btn_SuaSach.Location = new System.Drawing.Point(243, 291);
             this.btn_SuaSach.Name = "btn_SuaSach";
             this.btn_SuaSach.Size = new System.Drawing.Size(123, 51);
             this.btn_SuaSach.TabIndex = 19;
@@ -243,7 +252,7 @@
             // 
             // btn_ThemSach
             // 
-            this.btn_ThemSach.Location = new System.Drawing.Point(43, 287);
+            this.btn_ThemSach.Location = new System.Drawing.Point(43, 291);
             this.btn_ThemSach.Name = "btn_ThemSach";
             this.btn_ThemSach.Size = new System.Drawing.Size(123, 51);
             this.btn_ThemSach.TabIndex = 18;
@@ -254,7 +263,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 203);
+            this.label6.Location = new System.Drawing.Point(38, 207);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 25);
             this.label6.TabIndex = 17;
@@ -263,7 +272,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 160);
+            this.label7.Location = new System.Drawing.Point(38, 164);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 25);
             this.label7.TabIndex = 16;
@@ -272,7 +281,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(38, 118);
+            this.label8.Location = new System.Drawing.Point(38, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(104, 25);
             this.label8.TabIndex = 15;
@@ -281,18 +290,18 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(38, 78);
+            this.label9.Location = new System.Drawing.Point(38, 82);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 25);
+            this.label9.Size = new System.Drawing.Size(97, 25);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Mã Sách";
+            this.label9.Text = "Mã Sách:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(319, 12);
+            this.label10.Location = new System.Drawing.Point(319, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(177, 29);
             this.label10.TabIndex = 13;
@@ -300,6 +309,8 @@
             // 
             // panel_SinhVien
             // 
+            this.panel_SinhVien.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_SinhVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_SinhVien.Controls.Add(this.dataGridView1);
             this.panel_SinhVien.Controls.Add(this.txb_DiaChi);
             this.panel_SinhVien.Controls.Add(this.txb_SDT);
@@ -314,23 +325,23 @@
             this.panel_SinhVien.Controls.Add(this.label2);
             this.panel_SinhVien.Controls.Add(this.label1);
             this.panel_SinhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_SinhVien.Location = new System.Drawing.Point(893, 15);
+            this.panel_SinhVien.Location = new System.Drawing.Point(893, 129);
             this.panel_SinhVien.Margin = new System.Windows.Forms.Padding(4);
             this.panel_SinhVien.Name = "panel_SinhVien";
-            this.panel_SinhVien.Size = new System.Drawing.Size(556, 754);
+            this.panel_SinhVien.Size = new System.Drawing.Size(556, 689);
             this.panel_SinhVien.TabIndex = 3;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 358);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 347);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 392);
+            this.dataGridView1.Size = new System.Drawing.Size(546, 334);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -442,6 +453,68 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "TABLE: SinhVien";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(388, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(702, 62);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Library Management System";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.panel1.Location = new System.Drawing.Point(24, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(358, 100);
+            this.panel1.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(20, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 25);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "StudentID:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(158, 11);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(132, 25);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "2151013022";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(158, 36);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(132, 25);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "2151013023";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(158, 66);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(132, 25);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "2151013026";
+            // 
             // sINHVIENBindingSource
             // 
             this.sINHVIENBindingSource.DataMember = "SINHVIEN";
@@ -460,7 +533,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1465, 782);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1465, 828);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.panel_SinhVien);
             this.Controls.Add(this.panel_Sach);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -474,9 +550,12 @@
             this.panel_SinhVien.ResumeLayout(false);
             this.panel_SinhVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lab4_QuanLyThuVienDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -521,6 +600,12 @@
         private System.Windows.Forms.ComboBox Cbx_MSSV;
         private System.Windows.Forms.CheckBox chbox_enable_mssv;
         private System.Windows.Forms.Button bttn_XoaSV;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 
