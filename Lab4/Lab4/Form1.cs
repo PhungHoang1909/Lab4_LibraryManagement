@@ -111,7 +111,7 @@ namespace Lab4
 
 
         // Functions for Table SinhVien
-        private void btn_Them_Click(object sender, EventArgs e)
+        /*private void btn_Them_Click(object sender, EventArgs e)
         {
             int mssv = int.Parse(txb_MSSV.Text);
             string tenSV = txb_TenSV.Text;
@@ -120,6 +120,57 @@ namespace Lab4
 
             string query = "INSERT INTO SINHVIEN (MSSV, TenSV, SDT, DiaChi) VALUES (@MSSV, @TenSV, @SDT, @DiaChi)";
             
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@MSSV", mssv);
+                command.Parameters.AddWithValue("@TenSV", tenSV);
+                command.Parameters.AddWithValue("@SDT", sdt);
+                command.Parameters.AddWithValue("@DiaChi", diaChi);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data added successfully.");
+
+                    LoadGrid();
+                    LoadGridSach();
+                    LoadMSSV();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add data.");
+                }
+            }
+            ClearSV();
+        }*/
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            // Check if any textbox is empty
+            if (string.IsNullOrWhiteSpace(txb_MSSV.Text) ||
+                string.IsNullOrWhiteSpace(txb_TenSV.Text) ||
+                string.IsNullOrWhiteSpace(txb_SDT.Text) ||
+                string.IsNullOrWhiteSpace(txb_DiaChi.Text))
+            {
+                MessageBox.Show("Please fill in all the textboxes before adding.");
+                return; // Exit the method
+            }
+
+            int mssv;
+            if (!int.TryParse(txb_MSSV.Text, out mssv))
+            {
+                MessageBox.Show("Invalid MSSV. Please enter a valid integer.");
+                return; // Exit the method
+            }
+
+            string tenSV = txb_TenSV.Text;
+            string sdt = txb_SDT.Text;
+            string diaChi = txb_DiaChi.Text;
+
+            string query = "INSERT INTO SINHVIEN (MSSV, TenSV, SDT, DiaChi) VALUES (@MSSV, @TenSV, @SDT, @DiaChi)";
+
             using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@MSSV", mssv);
@@ -257,11 +308,17 @@ namespace Lab4
 
         private void btn_ThemSach_Click(object sender, EventArgs e)
         {
-            string tenSach = txb_TenSach.Text;
-            string nxb = txb_NXB.Text;
-            string Tacgia = txb_TacGia.Text;
-            string theloai = txb_TheLoai.Text;
-            string mota = rtb_MoTa.Text;
+            // Check if any textbox is empty
+            if (string.IsNullOrWhiteSpace(txb_TenSach.Text) ||
+                string.IsNullOrWhiteSpace(txb_NXB.Text) ||
+                string.IsNullOrWhiteSpace(txb_TacGia.Text) ||
+                string.IsNullOrWhiteSpace(txb_TheLoai.Text) ||
+                string.IsNullOrWhiteSpace(rtb_MoTa.Text))
+            {
+                MessageBox.Show("Please fill in all the textboxes before adding.");
+                return; // Exit the method
+            }
+
             int? mssv = null;
             if (!string.IsNullOrEmpty(Cbx_MSSV.Text))
             {
@@ -274,12 +331,11 @@ namespace Lab4
             }
             using (SqlCommand command = new SqlCommand(query, conn))
             {
-
-                command.Parameters.AddWithValue("@TenSach", tenSach);
-                command.Parameters.AddWithValue("@nxb", nxb);
-                command.Parameters.AddWithValue("@Tacgia", Tacgia);
-                command.Parameters.AddWithValue("@theloai", theloai);
-                command.Parameters.AddWithValue("@mota", mota);
+                command.Parameters.AddWithValue("@TenSach", txb_TenSach.Text);
+                command.Parameters.AddWithValue("@nxb", txb_NXB.Text);
+                command.Parameters.AddWithValue("@Tacgia", txb_TacGia.Text);
+                command.Parameters.AddWithValue("@theloai", txb_TheLoai.Text);
+                command.Parameters.AddWithValue("@mota", rtb_MoTa.Text);
                 if (mssv.HasValue && Cbx_MSSV.Enabled == true)
                 {
                     command.Parameters.AddWithValue("@MSSV", mssv.Value);
@@ -471,6 +527,11 @@ namespace Lab4
         }
 
         private void panel_Sach_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
         {
 
         }
