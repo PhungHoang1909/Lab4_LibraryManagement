@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
             this.panel_Sach = new System.Windows.Forms.Panel();
+            this.bttn_XoaSV = new System.Windows.Forms.Button();
             this.chbox_enable_mssv = new System.Windows.Forms.CheckBox();
             this.Cbx_MSSV = new System.Windows.Forms.ComboBox();
             this.rtb_MoTa = new System.Windows.Forms.RichTextBox();
@@ -67,7 +68,6 @@
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
-            this.bttn_XoaSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -123,6 +123,16 @@
             this.panel_Sach.Size = new System.Drawing.Size(869, 754);
             this.panel_Sach.TabIndex = 2;
             // 
+            // bttn_XoaSV
+            // 
+            this.bttn_XoaSV.Location = new System.Drawing.Point(668, 287);
+            this.bttn_XoaSV.Name = "bttn_XoaSV";
+            this.bttn_XoaSV.Size = new System.Drawing.Size(123, 51);
+            this.bttn_XoaSV.TabIndex = 33;
+            this.bttn_XoaSV.Text = "Trả Sách";
+            this.bttn_XoaSV.UseVisualStyleBackColor = true;
+            this.bttn_XoaSV.Click += new System.EventHandler(this.bttn_XoaSV_Click);
+            // 
             // chbox_enable_mssv
             // 
             this.chbox_enable_mssv.AutoSize = true;
@@ -135,13 +145,10 @@
             // 
             // Cbx_MSSV
             // 
-            this.Cbx_MSSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cbx_MSSV.FormattingEnabled = true;
-            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 118);
+            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 121);
             this.Cbx_MSSV.Name = "Cbx_MSSV";
             this.Cbx_MSSV.Size = new System.Drawing.Size(232, 33);
-            this.Cbx_MSSV.TabIndex = 31;
-            this.Cbx_MSSV.SelectedIndexChanged += new System.EventHandler(this.Cbx_MSSV_SelectedIndexChanged);
+            this.Cbx_MSSV.TabIndex = 34;
             // 
             // rtb_MoTa
             // 
@@ -208,13 +215,11 @@
             // 
             // txb_MaSach
             // 
-            this.txb_MaSach.Enabled = false;
-            this.txb_MaSach.Location = new System.Drawing.Point(161, 78);
+            this.txb_MaSach.Location = new System.Drawing.Point(161, 73);
             this.txb_MaSach.Name = "txb_MaSach";
             this.txb_MaSach.ReadOnly = true;
-            this.txb_MaSach.Size = new System.Drawing.Size(85, 30);
-            this.txb_MaSach.TabIndex = 21;
-            this.txb_MaSach.TextChanged += new System.EventHandler(this.txb_MaSach_TextChanged);
+            this.txb_MaSach.Size = new System.Drawing.Size(232, 30);
+            this.txb_MaSach.TabIndex = 35;
             // 
             // btn_XoaSach
             // 
@@ -357,7 +362,7 @@
             // 
             this.txb_MSSV.Location = new System.Drawing.Point(188, 78);
             this.txb_MSSV.Name = "txb_MSSV";
-            this.txb_MSSV.Size = new System.Drawing.Size(72, 30);
+            this.txb_MSSV.Size = new System.Drawing.Size(317, 30);
             this.txb_MSSV.TabIndex = 9;
             // 
             // btn_Xoa
@@ -450,16 +455,6 @@
             // sINHVIENTableAdapter
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // bttn_XoaSV
-            // 
-            this.bttn_XoaSV.Location = new System.Drawing.Point(668, 287);
-            this.bttn_XoaSV.Name = "bttn_XoaSV";
-            this.bttn_XoaSV.Size = new System.Drawing.Size(123, 51);
-            this.bttn_XoaSV.TabIndex = 33;
-            this.bttn_XoaSV.Text = "Trả Sách";
-            this.bttn_XoaSV.UseVisualStyleBackColor = true;
-            this.bttn_XoaSV.Click += new System.EventHandler(this.bttn_XoaSV_Click);
             // 
             // Form1
             // 
