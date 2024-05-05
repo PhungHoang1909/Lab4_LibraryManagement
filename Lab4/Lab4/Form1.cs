@@ -19,7 +19,7 @@ namespace Lab4
     {
         // Remember to change connectionString to YOURS
         //SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9188G78\\SQLEXPRESS;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
 
         public Form1()
         {
@@ -78,7 +78,7 @@ namespace Lab4
             Cbx_MSSV.Enabled = false;
 
         }
-        private void ClearText()
+        private void ClearSV()
         {
             txb_MSSV.Text = "";
             txb_TenSV.Text = "";
@@ -86,6 +86,16 @@ namespace Lab4
             txb_DiaChi.Text = "";
         }
 
+        private void ClearSach()
+        {
+            txb_MaSach.Text = "";
+            txb_TenSach.Text = "";
+            txb_NXB.Text = "";
+            txb_TacGia.Text = "";
+            txb_TheLoai.Text = "";
+            Cbx_MSSV.Text = "";
+            rtb_MoTa.Text = "";
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -134,7 +144,7 @@ namespace Lab4
                     MessageBox.Show("Failed to add data.");
                 }
             }
-            ClearText();
+            ClearSV();
         }
 
 
@@ -193,7 +203,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to update data.");
                 }
-                ClearText();
+                ClearSV();
             }
             
         }
@@ -239,7 +249,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to delete data. MSSV not found.");
                 }
-                ClearText();
+                ClearSV();
             }
         }
 
@@ -290,7 +300,7 @@ namespace Lab4
                     MessageBox.Show("Failed to add data.");
                 }
             }
-            ClearText();
+            ClearSach();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -354,7 +364,7 @@ namespace Lab4
                     MessageBox.Show("Failed to update data.");
                 }
             }
-            ClearText();
+            ClearSach();
         }
 
         private void dgv_Sach_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -417,7 +427,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to delete data. MaSach not found.");
                 }
-                ClearText();
+                ClearSach();
             }
         }
 
@@ -450,7 +460,7 @@ namespace Lab4
                         LoadMSSV();
                         LoadGrid();
                         LoadGridSach();
-                        ClearText();
+                        ClearSach();
                     }
                     else
                     {
@@ -458,6 +468,11 @@ namespace Lab4
                     }
                 }
             }
+        }
+
+        private void panel_Sach_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -67,10 +67,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
@@ -131,6 +131,7 @@
             this.panel_Sach.Name = "panel_Sach";
             this.panel_Sach.Size = new System.Drawing.Size(869, 689);
             this.panel_Sach.TabIndex = 2;
+            this.panel_Sach.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Sach_Paint);
             // 
             // bttn_XoaSV
             // 
@@ -479,23 +480,14 @@
             this.panel1.Size = new System.Drawing.Size(358, 100);
             this.panel1.TabIndex = 5;
             // 
-            // label15
+            // label18
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 36);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(115, 25);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "StudentID:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(158, 11);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 25);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "2151013022";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(158, 66);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(132, 25);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "2151013026";
             // 
             // label17
             // 
@@ -506,14 +498,23 @@
             this.label17.TabIndex = 2;
             this.label17.Text = "2151013023";
             // 
-            // label18
+            // label16
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(158, 66);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(132, 25);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "2151013026";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(158, 11);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(132, 25);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "2151013022";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(20, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 25);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "StudentID:";
             // 
             // sINHVIENBindingSource
             // 
