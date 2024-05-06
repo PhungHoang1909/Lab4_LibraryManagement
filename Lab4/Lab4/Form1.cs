@@ -18,11 +18,27 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
-        
+        //SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void LoadGridSach()
+        {
+
+            conn.Open();
+            string query = "SELECT * FROM SACH";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dgv_Sach.DataSource = table;
+            dgv_Sach.Rows[0].Selected = true;
+
+            conn.Close();
+
         }
 
         private void LoadGrid()
@@ -48,40 +64,9 @@ namespace Lab4
             Cbx_MSSV.DataSource = ds;
             conn.Close();
 
-            Cbx_MSSV.DataSource = ds.Tables[0]; // You need to bind to the DataTable, not the entire DataSet
-            Cbx_MSSV.DisplayMember = "MSSV"; // Specify the display member
-            Cbx_MSSV.ValueMember = "MSSV"; // Specify the value member
-            Select1stRow();
-        }
-
-        private void LoadGridSach()
-        {
-            
-            conn.Open();
-            string query = "SELECT * FROM SACH";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            dgv_Sach.DataSource = table;
-            dgv_Sach.Rows[0].Selected = true;
-            
-            conn.Close();
-            
-        }
-        private void Select1stRow()
-        {
-           /* txb_MSSV.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
-            txb_TenSV.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
-            txb_SDT.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            txb_DiaChi.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
-
-            *//*txb_MaSach.Text = dgv_Sach.Rows[0].Cells[0].Value.ToString();
-            txb_TenSach.Text = dgv_Sach.Rows[0].Cells[1].Value.ToString();
-            txb_NXB.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            txb_TacGia.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
-            txb_TheLoai.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
-            rtb_MoTa.Text = dataGridView1.Rows[0].Cells[5].Value.ToString();
-            Cbx_MSSV.Text = dataGridView1.Rows[0].Cells[6].Value.ToString();*/
+            Cbx_MSSV.DataSource = ds.Tables[0];
+            Cbx_MSSV.DisplayMember = "MSSV"; 
+            Cbx_MSSV.ValueMember = "MSSV"; 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -93,64 +78,7 @@ namespace Lab4
             Cbx_MSSV.Enabled = false;
 
         }
-
-
-
-        /*private void LoadData()
-        {
-            string query = "SELECT * FROM SINHVIEN";
-
-            DataTable dataTable = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-
-                    dataAdapter.Fill(dataTable);
-                }
-            }
-
-            dataGridView1.DataSource = dataTable;
-        }
-
-        private void btn_Them_Click(object sender, EventArgs e)
-        {
-            int mssv = int.Parse(txb_MSSV.Text);
-            string tenSV = txb_TenSV.Text;
-            string sdt = txb_SDT.Text;
-            string diaChi = txb_DiaChi.Text;
-
-            string query = "INSERT INTO SINHVIEN (MSSV, TenSV, SDT, DiaChi) VALUES (@MSSV, @TenSV, @SDT, @DiaChi)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@MSSV", mssv);
-                    command.Parameters.AddWithValue("@TenSV", tenSV);
-                    command.Parameters.AddWithValue("@SDT", sdt);
-                    command.Parameters.AddWithValue("@DiaChi", diaChi);
-
-                    connection.Open();
-                    int rowsAffected = command.ExecuteNonQuery();
-                    connection.Close();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Data added successfully.");
-
-                        LoadData();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to add data.");
-                    }
-                }
-            }
-        }*/
-        private void ClearText()
+        private void ClearSV()
         {
             txb_MSSV.Text = "";
             txb_TenSV.Text = "";
@@ -158,6 +86,16 @@ namespace Lab4
             txb_DiaChi.Text = "";
         }
 
+        private void ClearSach()
+        {
+            txb_MaSach.Text = "";
+            txb_TenSach.Text = "";
+            txb_NXB.Text = "";
+            txb_TacGia.Text = "";
+            txb_TheLoai.Text = "";
+            Cbx_MSSV.Text = "";
+            rtb_MoTa.Text = "";
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -171,7 +109,9 @@ namespace Lab4
             }
         }
 
-        private void btn_Them_Click(object sender, EventArgs e)
+
+        // Functions for Table SinhVien
+        /*private void btn_Them_Click(object sender, EventArgs e)
         {
             int mssv = int.Parse(txb_MSSV.Text);
             string tenSV = txb_TenSV.Text;
@@ -204,7 +144,58 @@ namespace Lab4
                     MessageBox.Show("Failed to add data.");
                 }
             }
-            ClearText();
+            ClearSV();
+        }*/
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            // Check if any textbox is empty
+            if (string.IsNullOrWhiteSpace(txb_MSSV.Text) ||
+                string.IsNullOrWhiteSpace(txb_TenSV.Text) ||
+                string.IsNullOrWhiteSpace(txb_SDT.Text) ||
+                string.IsNullOrWhiteSpace(txb_DiaChi.Text))
+            {
+                MessageBox.Show("Please fill in all the textboxes before adding.");
+                return; // Exit the method
+            }
+
+            int mssv;
+            if (!int.TryParse(txb_MSSV.Text, out mssv))
+            {
+                MessageBox.Show("Invalid MSSV. Please enter a valid integer.");
+                return; // Exit the method
+            }
+
+            string tenSV = txb_TenSV.Text;
+            string sdt = txb_SDT.Text;
+            string diaChi = txb_DiaChi.Text;
+
+            string query = "INSERT INTO SINHVIEN (MSSV, TenSV, SDT, DiaChi) VALUES (@MSSV, @TenSV, @SDT, @DiaChi)";
+
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@MSSV", mssv);
+                command.Parameters.AddWithValue("@TenSV", tenSV);
+                command.Parameters.AddWithValue("@SDT", sdt);
+                command.Parameters.AddWithValue("@DiaChi", diaChi);
+
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data added successfully.");
+
+                    LoadGrid();
+                    LoadGridSach();
+                    LoadMSSV();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add data.");
+                }
+            }
+            ClearSV();
         }
 
 
@@ -263,7 +254,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to update data.");
                 }
-                ClearText();
+                ClearSV();
             }
             
         }
@@ -309,10 +300,65 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to delete data. MSSV not found.");
                 }
-                ClearText();
+                ClearSV();
             }
         }
-        
+
+        // Functions for Table Sach
+
+        private void btn_ThemSach_Click(object sender, EventArgs e)
+        {
+            // Check if any textbox is empty
+            if (string.IsNullOrWhiteSpace(txb_TenSach.Text) ||
+                string.IsNullOrWhiteSpace(txb_NXB.Text) ||
+                string.IsNullOrWhiteSpace(txb_TacGia.Text) ||
+                string.IsNullOrWhiteSpace(txb_TheLoai.Text) ||
+                string.IsNullOrWhiteSpace(rtb_MoTa.Text))
+            {
+                MessageBox.Show("Please fill in all the textboxes before adding.");
+                return; // Exit the method
+            }
+
+            int? mssv = null;
+            if (!string.IsNullOrEmpty(Cbx_MSSV.Text))
+            {
+                mssv = int.Parse(Cbx_MSSV.Text);
+            }
+            string query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota)";
+            if (mssv.HasValue && Cbx_MSSV.Enabled == true)
+            {
+                query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa, MSSV) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota, @mssv)";
+            }
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@TenSach", txb_TenSach.Text);
+                command.Parameters.AddWithValue("@nxb", txb_NXB.Text);
+                command.Parameters.AddWithValue("@Tacgia", txb_TacGia.Text);
+                command.Parameters.AddWithValue("@theloai", txb_TheLoai.Text);
+                command.Parameters.AddWithValue("@mota", rtb_MoTa.Text);
+                if (mssv.HasValue && Cbx_MSSV.Enabled == true)
+                {
+                    command.Parameters.AddWithValue("@MSSV", mssv.Value);
+                }
+                conn.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Data Added successfully.");
+                    LoadMSSV();
+                    LoadGrid();
+                    LoadGridSach();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add data.");
+                }
+            }
+            ClearSach();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             // Check if MaSach is provided
@@ -374,56 +420,8 @@ namespace Lab4
                     MessageBox.Show("Failed to update data.");
                 }
             }
-            ClearText();
+            ClearSach();
         }
-
-        /*      private void button2_Click(object sender, EventArgs e)
-              {
-                  // Check if MSSV is provided
-                  if (string.IsNullOrEmpty(txb_MaSach.Text))
-                  {
-                      MessageBox.Show("Please select a row to update.");
-                      return;
-                  }
-
-                  int maSach = int.Parse(txb_MaSach.Text);
-                  string tenSach = txb_TenSach.Text;
-                  string nxb = txb_NXB.Text;
-                  string Tacgia = txb_TacGia.Text;
-                  string theloai = txb_TheLoai.Text;
-                  int mssv = int.Parse(Cbx_MSSV.Text);
-                  string mota = rtb_MoTa.Text;
-
-                  string query = "UPDATE SACH SET TenSach = @tenSach, NXB = @nxb, TG = @Tacgia, TheLoai = @Tacgia, MoTa = @mota, MSSV = @mssv WHERE MaSach = @maSach";
-
-                  using (SqlCommand command = new SqlCommand(query, conn))
-                  {
-                      command.Parameters.AddWithValue("@maSach", maSach);
-                      command.Parameters.AddWithValue("@MSSV", mssv);
-                      command.Parameters.AddWithValue("@TenSach", tenSach);
-                      command.Parameters.AddWithValue("@nxb", nxb);
-                      command.Parameters.AddWithValue("@tacgia", Tacgia);
-                      command.Parameters.AddWithValue("@theloai", theloai);
-                      command.Parameters.AddWithValue("@mota", mota);
-
-                      conn.Open();
-                      int rowsAffected = command.ExecuteNonQuery();
-                      conn.Close();
-
-                      if (rowsAffected > 0)
-                      {
-                          MessageBox.Show("Data updated successfully.");
-                          LoadMSSV();
-                          LoadGrid();
-                          LoadGridSach();
-                      }
-                      else
-                      {
-                          MessageBox.Show("Failed to update data.");
-                      }
-                  }
-                  ClearText();
-              }*/
 
         private void dgv_Sach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -441,63 +439,6 @@ namespace Lab4
             }
         }
 
-        private void Cbx_MSSV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_ThemSach_Click(object sender, EventArgs e)
-        {
-            string tenSach = txb_TenSach.Text;
-            string nxb = txb_NXB.Text;
-            string Tacgia = txb_TacGia.Text;
-            string theloai = txb_TheLoai.Text;
-            string mota = rtb_MoTa.Text;
-            int? mssv = null;
-            if (!string.IsNullOrEmpty(Cbx_MSSV.Text))
-            {
-                mssv = int.Parse(Cbx_MSSV.Text);
-            }
-            string query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota)";
-            if (mssv.HasValue && Cbx_MSSV.Enabled == true)
-            {
-                query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa, MSSV) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota, @mssv)";
-            }
-            using (SqlCommand command = new SqlCommand(query, conn))
-            {
-                
-                command.Parameters.AddWithValue("@TenSach", tenSach);
-                command.Parameters.AddWithValue("@nxb", nxb);
-                command.Parameters.AddWithValue("@Tacgia", Tacgia);
-                command.Parameters.AddWithValue("@theloai", theloai);
-                command.Parameters.AddWithValue("@mota", mota);
-                if (mssv.HasValue && Cbx_MSSV.Enabled == true)
-                {
-                    command.Parameters.AddWithValue("@MSSV", mssv.Value);
-                }
-                conn.Open();
-                int rowsAffected = command.ExecuteNonQuery();
-                conn.Close();
-
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Data Added successfully.");
-                    LoadMSSV();
-                    LoadGrid();
-                    LoadGridSach();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add data.");
-                }
-            }
-            ClearText();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void chbox_enable_mssv_CheckedChanged(object sender, EventArgs e)
         {
@@ -509,11 +450,6 @@ namespace Lab4
             {
                 Cbx_MSSV.Enabled = false;
             }
-        }
-
-        private void txb_MaSach_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_XoaSach_Click(object sender, EventArgs e)
@@ -547,7 +483,7 @@ namespace Lab4
                 {
                     MessageBox.Show("Failed to delete data. MaSach not found.");
                 }
-                ClearText();
+                ClearSach();
             }
         }
 
@@ -580,7 +516,7 @@ namespace Lab4
                         LoadMSSV();
                         LoadGrid();
                         LoadGridSach();
-                        ClearText();
+                        ClearSach();
                     }
                     else
                     {
@@ -588,6 +524,16 @@ namespace Lab4
                     }
                 }
             }
+        }
+
+        private void panel_Sach_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
