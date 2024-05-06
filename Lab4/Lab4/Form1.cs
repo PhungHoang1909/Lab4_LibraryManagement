@@ -179,6 +179,13 @@ namespace Lab4
 
             string query = "INSERT INTO SINHVIEN (MSSV, TenSV, SDT, DiaChi) VALUES (@MSSV, @TenSV, @SDT, @DiaChi)";
 
+            // Check if the student's name contains numbers
+            if (ContainsNumbers(tenSV))
+            {
+                MessageBox.Show("Cannot input student's name as number.");
+                return;
+            }
+
             using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@MSSV", mssv);
@@ -339,6 +346,14 @@ namespace Lab4
             {
                 mssv = int.Parse(Cbx_MSSV.Text);
             }
+
+            // Check if the author's name contains numbers
+            if (ContainsNumbers(txb_TacGia.Text))
+            {
+                MessageBox.Show("Cannot input author's name as number.");
+                return;
+            }
+
             string query = "INSERT INTO SACH (TenSach, NXB, TG, TheLoai, MoTa) VALUES (@TenSach, @nxb, @Tacgia, @theloai, @mota)";
             if (mssv.HasValue && Cbx_MSSV.Enabled == true)
             {
