@@ -570,15 +570,5 @@ namespace Lab4
         {
 
         }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cbx_MSSV_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
