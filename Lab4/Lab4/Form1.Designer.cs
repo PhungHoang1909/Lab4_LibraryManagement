@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
             this.panel_Sach = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.bttn_XoaSV = new System.Windows.Forms.Button();
             this.chbox_enable_mssv = new System.Windows.Forms.CheckBox();
             this.Cbx_MSSV = new System.Windows.Forms.ComboBox();
@@ -76,7 +77,6 @@
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -137,6 +137,14 @@
             this.panel_Sach.Size = new System.Drawing.Size(869, 689);
             this.panel_Sach.TabIndex = 2;
             this.panel_Sach.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Sach_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(559, 119);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(106, 30);
+            this.textBox1.TabIndex = 36;
             // 
             // bttn_XoaSV
             // 
@@ -358,6 +366,7 @@
             // txb_DiaChi
             // 
             this.txb_DiaChi.Location = new System.Drawing.Point(188, 203);
+            this.txb_DiaChi.MaxLength = 100;
             this.txb_DiaChi.Name = "txb_DiaChi";
             this.txb_DiaChi.Size = new System.Drawing.Size(317, 30);
             this.txb_DiaChi.TabIndex = 12;
@@ -365,6 +374,7 @@
             // txb_SDT
             // 
             this.txb_SDT.Location = new System.Drawing.Point(188, 160);
+            this.txb_SDT.MaxLength = 10;
             this.txb_SDT.Name = "txb_SDT";
             this.txb_SDT.Size = new System.Drawing.Size(317, 30);
             this.txb_SDT.TabIndex = 11;
@@ -372,6 +382,7 @@
             // txb_TenSV
             // 
             this.txb_TenSV.Location = new System.Drawing.Point(188, 118);
+            this.txb_TenSV.MaxLength = 100;
             this.txb_TenSV.Name = "txb_TenSV";
             this.txb_TenSV.Size = new System.Drawing.Size(317, 30);
             this.txb_TenSV.TabIndex = 10;
@@ -379,6 +390,7 @@
             // txb_MSSV
             // 
             this.txb_MSSV.Location = new System.Drawing.Point(188, 78);
+            this.txb_MSSV.MaxLength = 50;
             this.txb_MSSV.Name = "txb_MSSV";
             this.txb_MSSV.Size = new System.Drawing.Size(317, 30);
             this.txb_MSSV.TabIndex = 9;
@@ -546,14 +558,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(559, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(106, 30);
-            this.textBox1.TabIndex = 36;
             // 
             // Form1
             // 
