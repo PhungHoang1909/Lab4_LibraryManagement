@@ -18,7 +18,7 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
         //Doan Hieu: SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
 
         public Form1()
@@ -97,6 +97,13 @@ namespace Lab4
             textBox1.Text = "";
             chbox_enable_mssv.Checked = false;
         }
+
+        // Method to check if a string contains numbers
+        private bool ContainsNumbers(string input)
+        {
+            return input.Any(char.IsDigit);
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -221,6 +228,13 @@ namespace Lab4
             string diaChi = txb_DiaChi.Text;
 
             string query = "UPDATE SINHVIEN SET TenSV = @TenSV, SDT = @SDT, DiaChi = @DiaChi WHERE MSSV = @MSSV";
+
+            // Check if the student's name contains numbers
+            if (ContainsNumbers(tenSV))
+            {
+                MessageBox.Show("Cannot input student's name as number.");
+                return;
+            }
 
             using (SqlCommand command = new SqlCommand(query, conn))
             {
@@ -380,6 +394,13 @@ namespace Lab4
                 mssv = int.Parse(Cbx_MSSV.Text);
             }
             string mota = rtb_MoTa.Text;
+
+            // Check if the author's name contains numbers
+            if (ContainsNumbers(Tacgia))
+            {
+                MessageBox.Show("Cannot input author's name as number.");
+                return;
+            }
 
             string query = "UPDATE SACH SET TenSach = @TenSach, NXB = @nxb, TG = @Tacgia, TheLoai = @theloai, MoTa = @mota";
 
