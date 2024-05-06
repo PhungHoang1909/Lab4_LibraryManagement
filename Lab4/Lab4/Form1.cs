@@ -18,8 +18,8 @@ namespace Lab4
     public partial class Form1 : Form
     {
         // Remember to change connectionString to YOURS
-        //SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
-        SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
+        //Doan Hieu: SqlConnection conn = new SqlConnection("Data Source=MSI;Initial Catalog=Lab4_QuanLyThuVien;Integrated Security=True");
 
         public Form1()
         {
@@ -93,8 +93,9 @@ namespace Lab4
             txb_NXB.Text = "";
             txb_TacGia.Text = "";
             txb_TheLoai.Text = "";
-            Cbx_MSSV.Text = "";
             rtb_MoTa.Text = "";
+            textBox1.Text = "";
+            chbox_enable_mssv.Checked = false;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -435,9 +436,11 @@ namespace Lab4
                 txb_TacGia.Text = row.Cells[3].Value.ToString();
                 txb_TheLoai.Text = row.Cells[4].Value.ToString();
                 rtb_MoTa.Text = row.Cells[5].Value.ToString();
-                Cbx_MSSV.Text = row.Cells[6].Value.ToString();
+                textBox1.Text = row.Cells[6].Value.ToString();
             }
         }
+
+
 
 
         private void chbox_enable_mssv_CheckedChanged(object sender, EventArgs e)
@@ -495,7 +498,9 @@ namespace Lab4
                 return;
             }
 
-            if (string.IsNullOrEmpty(Cbx_MSSV.Text))
+            DataGridViewRow row = this.dgv_Sach.CurrentRow;
+            string ID = row.Cells[6].Value.ToString();
+            if (string.IsNullOrEmpty(ID))
             {
                 MessageBox.Show("Book is not borrowed by any Student.");
                 return;
@@ -512,7 +517,7 @@ namespace Lab4
                     conn.Close();
                     if (rowsAffected_2 > 0)
                     {
-                        MessageBox.Show("Book Returned Complete");
+                        MessageBox.Show("Book Returned Complete (MSSV Removed)");
                         LoadMSSV();
                         LoadGrid();
                         LoadGridSach();
@@ -532,6 +537,11 @@ namespace Lab4
         }
 
         private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cbx_MSSV_Click(object sender, EventArgs e)
         {
 
         }

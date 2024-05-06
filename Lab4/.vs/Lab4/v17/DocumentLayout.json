@@ -1,25 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\",
+  "WorkspaceRootPath": "C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\",
   "Documents": [
     {
-<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|c:\\study\\c#\\hqtcsdl\\git_lab4\\lab4_librarymanagement\\lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|solutionrelative:lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-=======
-      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|c:\\y3hk2\\qu\u1EA3n tr\u1ECB h\u1EC7 csdl\\lab4\\lab4_librarymanagement\\lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|solutionrelative:lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
->>>>>>> ab27655f6c285365dbcd578f964fbd823a76346e
+      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|c:\\study\\c#\\hqtcsdl\\git_lab4\\lab4_librarymanagement\\lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|solutionrelative:lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|solutionrelative:lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,47 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs",
+              "RelativeDocumentMoniker": "Lab4\\Form1.cs",
+              "ToolTip": "C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs [Design]",
+              "RelativeToolTip": "Lab4\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T01:09:33.837Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs",
+              "DocumentMoniker": "C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs",
               "RelativeDocumentMoniker": "Lab4\\Form1.cs",
-              "ToolTip": "C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs",
+              "ToolTip": "C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs",
               "RelativeToolTip": "Lab4\\Form1.cs",
-<<<<<<< HEAD
-              "ViewState": "AQIAAP8BAAAAAAAAAAAQwM8BAABUAAAA",
-=======
-              "ViewState": "AQIAAKwAAAAAAAAAAAAIwLoAAAAUAAAA",
->>>>>>> ab27655f6c285365dbcd578f964fbd823a76346e
+              "ViewState": "AQIAAFAAAAAAAAAAAAA9wGEAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T09:16:49.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs",
-              "RelativeDocumentMoniker": "Lab4\\Form1.cs",
-              "ToolTip": "C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Form1.cs [Design]",
-              "RelativeToolTip": "Lab4\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T09:16:35.9Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Program.cs",
+              "DocumentMoniker": "C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Program.cs",
               "RelativeDocumentMoniker": "Lab4\\Program.cs",
-              "ToolTip": "C:\\Y3HK2\\Qu\u1EA3n tr\u1ECB h\u1EC7 CSDL\\Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Program.cs",
+              "ToolTip": "C:\\Study\\C#\\HQTCSDL\\Git_Lab4\\Lab4_LibraryManagement\\Lab4\\Lab4\\Program.cs",
               "RelativeToolTip": "Lab4\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T09:16:19.738Z"
+              "WhenOpened": "2024-05-03T09:16:19.738Z",
+              "EditorCaption": ""
             }
           ]
         }

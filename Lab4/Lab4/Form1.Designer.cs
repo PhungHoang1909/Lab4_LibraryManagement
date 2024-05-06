@@ -76,6 +76,7 @@
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             this.panel_Sach.BackColor = System.Drawing.Color.Gainsboro;
             this.panel_Sach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_Sach.Controls.Add(this.textBox1);
             this.panel_Sach.Controls.Add(this.bttn_XoaSV);
             this.panel_Sach.Controls.Add(this.chbox_enable_mssv);
             this.panel_Sach.Controls.Add(this.Cbx_MSSV);
@@ -149,7 +151,7 @@
             // chbox_enable_mssv
             // 
             this.chbox_enable_mssv.AutoSize = true;
-            this.chbox_enable_mssv.Location = new System.Drawing.Point(797, 130);
+            this.chbox_enable_mssv.Location = new System.Drawing.Point(796, 126);
             this.chbox_enable_mssv.Name = "chbox_enable_mssv";
             this.chbox_enable_mssv.Size = new System.Drawing.Size(18, 17);
             this.chbox_enable_mssv.TabIndex = 32;
@@ -158,10 +160,11 @@
             // 
             // Cbx_MSSV
             // 
-            this.Cbx_MSSV.Location = new System.Drawing.Point(559, 125);
+            this.Cbx_MSSV.Location = new System.Drawing.Point(668, 118);
             this.Cbx_MSSV.Name = "Cbx_MSSV";
-            this.Cbx_MSSV.Size = new System.Drawing.Size(232, 33);
+            this.Cbx_MSSV.Size = new System.Drawing.Size(122, 33);
             this.Cbx_MSSV.TabIndex = 34;
+            this.Cbx_MSSV.Click += new System.EventHandler(this.Cbx_MSSV_Click);
             // 
             // rtb_MoTa
             // 
@@ -199,7 +202,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(436, 82);
+            this.label13.Location = new System.Drawing.Point(436, 85);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(95, 25);
             this.label13.TabIndex = 25;
@@ -544,6 +547,14 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(559, 119);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(106, 30);
+            this.textBox1.TabIndex = 36;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -624,6 +635,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
