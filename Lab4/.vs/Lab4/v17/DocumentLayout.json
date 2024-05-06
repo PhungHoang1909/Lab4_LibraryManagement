@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\Study\\N\u0103m 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|D:\\Study\\N\u0103m 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|d:\\study\\n\u0103m 3\\hkii\\quantrihecsdl\\thuchanh\\lab4_librarymanagement\\lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|solutionrelative:lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|solutionrelative:lab4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|d:\\study\\n\u0103m 3\\hkii\\quantrihecsdl\\thuchanh\\lab4_librarymanagement\\lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|D:\\Study\\N\u0103m 3\\HKII\\QuanTriHeCSDL\\ThucHanh\\Lab4_LibraryManagement\\Lab4\\lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89C9410E-0780-46C3-A3E5-865CC2F9E2E4}|Lab4\\Lab4.csproj|solutionrelative:lab4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -46,8 +46,7 @@
               "RelativeToolTip": "Lab4\\Form1.cs",
               "ViewState": "AQIAANgAAAAAAAAAAAAawOYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T09:16:49.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T09:16:49.782Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "Lab4\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T09:16:19.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T09:16:19.738Z"
             }
           ]
         }

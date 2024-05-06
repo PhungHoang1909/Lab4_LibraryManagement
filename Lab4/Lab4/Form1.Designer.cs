@@ -185,6 +185,7 @@
             // txb_TheLoai
             // 
             this.txb_TheLoai.Location = new System.Drawing.Point(559, 82);
+            this.txb_TheLoai.MaxLength = 50;
             this.txb_TheLoai.Name = "txb_TheLoai";
             this.txb_TheLoai.Size = new System.Drawing.Size(232, 30);
             this.txb_TheLoai.TabIndex = 28;
@@ -219,6 +220,7 @@
             // txb_TacGia
             // 
             this.txb_TacGia.Location = new System.Drawing.Point(161, 207);
+            this.txb_TacGia.MaxLength = 50;
             this.txb_TacGia.Name = "txb_TacGia";
             this.txb_TacGia.Size = new System.Drawing.Size(232, 30);
             this.txb_TacGia.TabIndex = 24;
@@ -226,6 +228,7 @@
             // txb_NXB
             // 
             this.txb_NXB.Location = new System.Drawing.Point(161, 164);
+            this.txb_NXB.MaxLength = 50;
             this.txb_NXB.Name = "txb_NXB";
             this.txb_NXB.Size = new System.Drawing.Size(232, 30);
             this.txb_NXB.TabIndex = 23;
@@ -233,6 +236,7 @@
             // txb_TenSach
             // 
             this.txb_TenSach.Location = new System.Drawing.Point(161, 122);
+            this.txb_TenSach.MaxLength = 50;
             this.txb_TenSach.Name = "txb_TenSach";
             this.txb_TenSach.Size = new System.Drawing.Size(232, 30);
             this.txb_TenSach.TabIndex = 22;
