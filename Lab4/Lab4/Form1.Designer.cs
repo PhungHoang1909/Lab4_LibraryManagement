@@ -69,6 +69,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
-            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
@@ -380,8 +380,10 @@
             this.txb_SDT.Location = new System.Drawing.Point(188, 160);
             this.txb_SDT.MaxLength = 10;
             this.txb_SDT.Name = "txb_SDT";
+            this.txb_SDT.ShortcutsEnabled = false;
             this.txb_SDT.Size = new System.Drawing.Size(317, 30);
             this.txb_SDT.TabIndex = 11;
+            this.txb_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_SDT_KeyPress);
             // 
             // txb_TenSV
             // 
@@ -503,6 +505,15 @@
             this.panel1.Size = new System.Drawing.Size(358, 100);
             this.panel1.TabIndex = 5;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(158, 61);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(132, 25);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "2151013026";
+            // 
             // label18
             // 
             this.label18.Location = new System.Drawing.Point(0, 0);
@@ -560,15 +571,6 @@
             // sINHVIENTableAdapter
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(158, 61);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(132, 25);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "2151013026";
             // 
             // Form1
             // 

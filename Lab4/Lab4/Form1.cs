@@ -570,5 +570,13 @@ namespace Lab4
         {
 
         }
+
+        private void txb_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Loại bỏ ký tự không hợp lệ
+            }
+        }
     }
 }
