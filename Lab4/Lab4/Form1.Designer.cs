@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
             this.panel_Sach = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.bttn_XoaSV = new System.Windows.Forms.Button();
             this.chbox_enable_mssv = new System.Windows.Forms.CheckBox();
             this.Cbx_MSSV = new System.Windows.Forms.ComboBox();
@@ -72,19 +73,19 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lab4_QuanLyThuVienDataSet = new Lab4.Lab4_QuanLyThuVienDataSet();
             this.sINHVIENTableAdapter = new Lab4.Lab4_QuanLyThuVienDataSetTableAdapters.SINHVIENTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             this.panel_Sach.SuspendLayout();
             this.panel_SinhVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lab4_QuanLyThuVienDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_Sach
@@ -138,6 +139,14 @@
             this.panel_Sach.TabIndex = 2;
             this.panel_Sach.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Sach_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(559, 119);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(106, 30);
+            this.textBox1.TabIndex = 36;
+            // 
             // bttn_XoaSV
             // 
             this.bttn_XoaSV.Location = new System.Drawing.Point(668, 291);
@@ -160,11 +169,10 @@
             // 
             // Cbx_MSSV
             // 
-            this.Cbx_MSSV.Location = new System.Drawing.Point(668, 118);
+            this.Cbx_MSSV.Location = new System.Drawing.Point(671, 116);
             this.Cbx_MSSV.Name = "Cbx_MSSV";
-            this.Cbx_MSSV.Size = new System.Drawing.Size(122, 33);
-            this.Cbx_MSSV.TabIndex = 34;
-            this.Cbx_MSSV.Click += new System.EventHandler(this.Cbx_MSSV_Click);
+            this.Cbx_MSSV.Size = new System.Drawing.Size(121, 33);
+            this.Cbx_MSSV.TabIndex = 37;
             // 
             // rtb_MoTa
             // 
@@ -177,6 +185,7 @@
             // txb_TheLoai
             // 
             this.txb_TheLoai.Location = new System.Drawing.Point(559, 82);
+            this.txb_TheLoai.MaxLength = 50;
             this.txb_TheLoai.Name = "txb_TheLoai";
             this.txb_TheLoai.Size = new System.Drawing.Size(232, 30);
             this.txb_TheLoai.TabIndex = 28;
@@ -211,6 +220,7 @@
             // txb_TacGia
             // 
             this.txb_TacGia.Location = new System.Drawing.Point(161, 207);
+            this.txb_TacGia.MaxLength = 50;
             this.txb_TacGia.Name = "txb_TacGia";
             this.txb_TacGia.Size = new System.Drawing.Size(232, 30);
             this.txb_TacGia.TabIndex = 24;
@@ -218,6 +228,7 @@
             // txb_NXB
             // 
             this.txb_NXB.Location = new System.Drawing.Point(161, 164);
+            this.txb_NXB.MaxLength = 50;
             this.txb_NXB.Name = "txb_NXB";
             this.txb_NXB.Size = new System.Drawing.Size(232, 30);
             this.txb_NXB.TabIndex = 23;
@@ -225,6 +236,7 @@
             // txb_TenSach
             // 
             this.txb_TenSach.Location = new System.Drawing.Point(161, 122);
+            this.txb_TenSach.MaxLength = 50;
             this.txb_TenSach.Name = "txb_TenSach";
             this.txb_TenSach.Size = new System.Drawing.Size(232, 30);
             this.txb_TenSach.TabIndex = 22;
@@ -358,6 +370,7 @@
             // txb_DiaChi
             // 
             this.txb_DiaChi.Location = new System.Drawing.Point(188, 203);
+            this.txb_DiaChi.MaxLength = 100;
             this.txb_DiaChi.Name = "txb_DiaChi";
             this.txb_DiaChi.Size = new System.Drawing.Size(317, 30);
             this.txb_DiaChi.TabIndex = 12;
@@ -365,6 +378,7 @@
             // txb_SDT
             // 
             this.txb_SDT.Location = new System.Drawing.Point(188, 160);
+            this.txb_SDT.MaxLength = 10;
             this.txb_SDT.Name = "txb_SDT";
             this.txb_SDT.Size = new System.Drawing.Size(317, 30);
             this.txb_SDT.TabIndex = 11;
@@ -372,6 +386,7 @@
             // txb_TenSV
             // 
             this.txb_TenSV.Location = new System.Drawing.Point(188, 118);
+            this.txb_TenSV.MaxLength = 100;
             this.txb_TenSV.Name = "txb_TenSV";
             this.txb_TenSV.Size = new System.Drawing.Size(317, 30);
             this.txb_TenSV.TabIndex = 10;
@@ -379,6 +394,7 @@
             // txb_MSSV
             // 
             this.txb_MSSV.Location = new System.Drawing.Point(188, 78);
+            this.txb_MSSV.MaxLength = 50;
             this.txb_MSSV.Name = "txb_MSSV";
             this.txb_MSSV.Size = new System.Drawing.Size(317, 30);
             this.txb_MSSV.TabIndex = 9;
@@ -475,6 +491,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
@@ -488,13 +505,10 @@
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(158, 61);
+            this.label18.Location = new System.Drawing.Point(0, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(132, 25);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "2151013026";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
+            this.label18.Size = new System.Drawing.Size(100, 23);
+            this.label18.TabIndex = 0;
             // 
             // label17
             // 
@@ -523,6 +537,16 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "StudentID:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1282, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(162, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // sINHVIENBindingSource
             // 
             this.sINHVIENBindingSource.DataMember = "SINHVIEN";
@@ -537,23 +561,14 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
+            // label19
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1282, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 101);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(559, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(106, 30);
-            this.textBox1.TabIndex = 36;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(158, 61);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(132, 25);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "2151013026";
             // 
             // Form1
             // 
@@ -579,9 +594,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lab4_QuanLyThuVienDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,6 +651,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label19;
     }
 }
 
