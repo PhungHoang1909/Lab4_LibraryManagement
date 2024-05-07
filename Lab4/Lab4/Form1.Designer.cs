@@ -398,8 +398,10 @@
             this.txb_MSSV.Location = new System.Drawing.Point(188, 78);
             this.txb_MSSV.MaxLength = 50;
             this.txb_MSSV.Name = "txb_MSSV";
+            this.txb_MSSV.ShortcutsEnabled = false;
             this.txb_MSSV.Size = new System.Drawing.Size(317, 30);
             this.txb_MSSV.TabIndex = 9;
+            this.txb_MSSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_MSSV_KeyPress);
             // 
             // btn_Xoa
             // 

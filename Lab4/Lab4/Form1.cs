@@ -578,5 +578,13 @@ namespace Lab4
                 e.Handled = true; // Loại bỏ ký tự không hợp lệ
             }
         }
+
+        private void txb_MSSV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Loại bỏ ký tự không hợp lệ
+            }
+        }
     }
 }
